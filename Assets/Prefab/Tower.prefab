@@ -68,7 +68,8 @@ MonoBehaviour:
   cannotBuild: {r: 0.7264151, g: 0.15375294, b: 0, a: 1}
   coolDown: 0.5
   damage: 1
-  maxAmmo: 5
+  maxAmmo: 5000
+  inCollision: 0
 --- !u!1 &5056030930177171808
 GameObject:
   m_ObjectHideFlags: 0

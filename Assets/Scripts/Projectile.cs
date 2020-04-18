@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     private GameObject target;
     private float step;
     private float damage;
@@ -12,11 +12,11 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        step = speed * Time.deltaTime;
+        step = speed;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (target != null)
         {
