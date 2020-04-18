@@ -37,7 +37,13 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Ruin" && Input.GetKey(KeyCode.E))
+        {
+            collision.GetComponent<Ruins>().Use();
+        }
+    }
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -59,7 +65,5 @@ public class PlayerScript : MonoBehaviour
         transform.Translate(speed * movement);
         anim.SetFloat("speed", speedX + speedY);
         anim.SetInteger("direction", direction);
-
-
     }
 }
