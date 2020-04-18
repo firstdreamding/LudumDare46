@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class RockThrower : MonoBehaviour
 {
+    enum State
+    {
+        SELECT,
+        BUILDING,
+        BUILT
+    }
+
     public GameObject prefab;
+    public Color canBuild;
+    public Color cannotBuild;
     public float coolDown;
     public float damage;
     public int maxAmmo;
 
     List<GameObject> inRange;
+    private State state;
     private float lastShoot;
     private GameObject information;
     private int currentAmmo;
     private GameObject needAmmo;
+    private GameObject highlight;
 
-    // Start is called before the first frame update
+    private Vector3 mousePosition;
+
     void Start()
     {
         inRange = new List<GameObject>();
@@ -25,27 +37,40 @@ public class RockThrower : MonoBehaviour
         currentAmmo = maxAmmo;
 
         needAmmo = transform.Find("NeedAmmo").gameObject;
+
+        highlight = transform.Find("Highlight").gameObject;
+        highlight.GetComponent<SpriteRenderer>().color = canBuild;
+
+        state = State.SELECT;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (coolDown + lastShoot < Time.time)
+        if (state == State.BUILT)
         {
-            if (currentAmmo > 0)
+            foreach (GameObject go in inRange)
             {
-                foreach (GameObject go in inRange)
-                {
+                if (lastShoot + coolDown < Time.time) {
+                    lastShoot = Time.time;
                     GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                    temp.GetComponent<Projectile>().SetValues(go, damage);
-                    currentAmmo--;
+                    temp.GetComponent<Projectile>().SetValues(go, damage);  
                 }
-                lastShoot = Time.time;
-            } else
-            {
-                needAmmo.SetActive(true);
             }
+        } else if (state == State.SELECT)
+        {
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = transform.position.z;
+            transform.position = mousePosition;
         }
+    }
+
+    public void SetDown()
+    {
+        MainScript.MSCRIPT.towerActive.Add(gameObject);
+
+        highlight.SetActive(false);
+        state = State.BUILT;
     }
 
     void Reload()
@@ -54,12 +79,18 @@ public class RockThrower : MonoBehaviour
         needAmmo.SetActive(false);
     }
 
-    void OnMouseDown()
+    public void Click()
     {
-        information.SetActive(true);
-        information.GetComponent<Information>().SetInfo(damage, coolDown);
+        if (state != State.SELECT)
+        {
+            information.SetActive(true);
+            information.GetComponent<Information>().SetInfo(damage, coolDown);
 
-        Reload();
+            Reload();
+        } else
+        {
+            SetDown();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
