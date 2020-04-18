@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 3bd553e0cd8be4348a044f09e9a422a3
+guid: 554aded0c904321478e8a3bb5175e199
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1515997999314860018
-    second: playersprite_0
+      213: 3700810548614518524
+    second: scythe_0
   - first:
-      213: 8013488327420671196
-    second: playersprite_1
+      213: 4299880391440808856
+    second: scythe_1
   - first:
-      213: -5550576318493775922
-    second: playersprite_2
+      213: -1185441839583656306
+    second: scythe_2
   - first:
-      213: 4197072223555570845
-    second: playersprite_3
+      213: 1067703830162180063
+    second: scythe_3
+  - first:
+      213: 523516735369692249
+    second: scythe_4
+  - first:
+      213: 7483073821116668096
+    second: scythe_5
+  - first:
+      213: 6511075333252600376
+    second: scythe_6
+  - first:
+      213: 6191200392009913039
+    second: scythe_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -101,85 +113,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playersprite_0
+      name: scythe_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 5
-        width: 28
-        height: 38
+        x: 11
+        y: 35
+        width: 9
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f77d55f528e90510800000000000000
-      internalID: 1515997999314860018
+      spriteID: cf6df23169beb5330800000000000000
+      internalID: 3700810548614518524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playersprite_1
+      name: scythe_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 5
-        width: 28
-        height: 38
+        x: 63
+        y: 27
+        width: 22
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd4f5af2d21a53f60800000000000000
-      internalID: 8013488327420671196
+      spriteID: 89b3f7c2f6e3cab30800000000000000
+      internalID: 4299880391440808856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playersprite_2
+      name: scythe_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 5
-        width: 28
-        height: 38
+        x: 103
+        y: 12
+        width: 25
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec7ab7d1f3468f2b0800000000000000
-      internalID: -5550576318493775922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playersprite_3
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 5
-        width: 28
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9c40b543fefe3a30800000000000000
-      internalID: 4197072223555570845
+      spriteID: e860bb97de67c8fe0800000000000000
+      internalID: -1185441839583656306
       vertices: []
       indices: 
       edges: []
