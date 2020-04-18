@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     {
         if (target != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z), step);
         } else
         {
             Destroy(gameObject);

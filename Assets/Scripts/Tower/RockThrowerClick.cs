@@ -16,4 +16,23 @@ public class RockThrowerClick : MonoBehaviour
         Debug.Log("CLICK");
         script.Click();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "Tower")
+        {
+            script.inCollision++;
+            script.CollisionDown();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Tower")
+        {
+            script.inCollision--;
+            script.CollisionUp();
+        }
+    }
 }
