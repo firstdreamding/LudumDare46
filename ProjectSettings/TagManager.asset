@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
+  - Tower
+  - Path
+  - PathTurn
+  - Enemy
+  - Pharaoh
   layers:
   - Default
   - TransparentFX

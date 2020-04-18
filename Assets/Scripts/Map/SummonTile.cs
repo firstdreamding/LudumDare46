@@ -22,7 +22,8 @@ public class SummonTile : MonoBehaviour
         if (timeSummon + lastSummon < Time.time)
         {
             lastSummon = Time.time;
-            Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            GameObject temp = Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            temp.GetComponent<Enemy>().Init(targetMove);
         }
     }
 }
