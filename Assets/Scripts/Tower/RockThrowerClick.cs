@@ -20,7 +20,7 @@ public class RockThrowerClick : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.tag == "Tower")
+        if (collision.tag == "Tower" || collision.tag == "Path" || collision.tag == "PathTurn")
         {
             script.inCollision++;
             script.CollisionDown();
@@ -29,7 +29,7 @@ public class RockThrowerClick : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Tower")
+        if (collision.tag == "Tower" || collision.tag == "Path" || collision.tag == "PathTurn")
         {
             script.inCollision--;
             script.CollisionUp();
