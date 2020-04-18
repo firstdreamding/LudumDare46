@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Summoning : MonoBehaviour
+public class SummonTile : MonoBehaviour
 {
     public float timeSummon;
     public GameObject prefab;
+    public Vector2 targetMove;
 
     private float lastSummon;
 
@@ -21,7 +22,7 @@ public class Summoning : MonoBehaviour
         if (timeSummon + lastSummon < Time.time)
         {
             lastSummon = Time.time;
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
         }
     }
 }

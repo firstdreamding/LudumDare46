@@ -17,6 +17,7 @@ public class RockThrower : MonoBehaviour
     public float coolDown;
     public float damage;
     public int maxAmmo;
+    public int inCollision;
 
     List<GameObject> inRange;
     private State state;
@@ -76,10 +77,16 @@ public class RockThrower : MonoBehaviour
 
     public void SetDown()
     {
-        MainScript.MSCRIPT.towerActive.Add(gameObject);
+        if (inCollision == 0)
+        {
+            MainScript.MSCRIPT.towerActive.Add(gameObject);
 
-        highlight.SetActive(false);
-        state = State.BUILT;
+            highlight.SetActive(false);
+            state = State.BUILT;
+        } else
+        {
+            Debug.Log("CANNOT BUILD");
+        }
     }
 
     void Reload()
@@ -119,5 +126,21 @@ public class RockThrower : MonoBehaviour
             Debug.Log("yup1");
             inRange.Remove(collision.gameObject);
         }
+    }
+
+    public void CollisionDown()
+    {
+        if (inCollision > 0)
+        {
+            highlight.GetComponent<SpriteRenderer>().color = cannotBuild;
+        }
+    }
+
+    public void CollisionUp()
+    {
+        if (inCollision == 0)
+        {
+            highlight.GetComponent<SpriteRenderer>().color = canBuild;
+        }  
     }
 }
