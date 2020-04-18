@@ -9,7 +9,7 @@ public class Information : MonoBehaviour
     private RectTransform fireTrans;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         damageTrans = transform.Find("Damage").Find("Bar").Find("Content").GetComponent<RectTransform>();
         fireTrans = transform.Find("Fire Rate").Find("Bar").Find("Content").GetComponent<RectTransform>();
