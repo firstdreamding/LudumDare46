@@ -85,7 +85,7 @@ public class RockThrower : MonoBehaviour
                 }
             } else
             {
-                if (startShoot + delay < Time.time)
+                if (startShoot + delay < Time.time && inRange.Count > 0)
                 {
                     GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
                     temp.GetComponent<Projectile>().SetValues(inRange[0], damage);
@@ -117,7 +117,6 @@ public class RockThrower : MonoBehaviour
 
             highlight.SetActive(false);
             state = State.BUILT;
-            transform.Find("Content").gameObject.GetComponent<SpriteRenderer>().enabled = true;
             MainScript.MSCRIPT.state = MainScript.State.GAME;
         } else
         {
@@ -136,7 +135,7 @@ public class RockThrower : MonoBehaviour
         if (state != State.SELECT)
         {
             information.SetActive(true);
-            information.GetComponent<Information>().SetInfo(damage, coolDown, ts);
+            information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
 
             Reload();
         } else

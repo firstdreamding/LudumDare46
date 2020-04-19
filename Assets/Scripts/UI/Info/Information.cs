@@ -9,6 +9,7 @@ public class Information : MonoBehaviour
 
     private RectTransform damageTrans;
     private RectTransform fireTrans;
+    private GameObject currentGameObject;
     public TowerStats ts;
 
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class Information : MonoBehaviour
 
     }
 
-    public void SetInfo(float damage, float firerate, TowerStats ts)
+    public void SetInfo(float damage, float firerate, TowerStats ts, GameObject go)
     {
         Vector2 dvector = damageTrans.sizeDelta;
         dvector.x = 200 * (damage / 6);
@@ -44,10 +45,17 @@ public class Information : MonoBehaviour
         {
             transform.Find("Dropdown").gameObject.SetActive(true);
         }
+
+        currentGameObject = go;
     }
 
     public void Close()
     {
         gameObject.SetActive(false);
+    }
+
+    public void Fire()
+    {
+        Destroy(currentGameObject);
     }
 }
