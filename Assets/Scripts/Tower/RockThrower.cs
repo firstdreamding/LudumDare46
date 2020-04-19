@@ -18,14 +18,18 @@ public class RockThrower : MonoBehaviour
     public float damage;
     public int maxAmmo;
     public int inCollision;
+    public float delay;
 
     List<GameObject> inRange;
     private State state;
     private float lastShoot;
+    private float startShoot;
     private GameObject information;
     private int currentAmmo;
     private GameObject needAmmo;
     private GameObject highlight;
+    private Animator anim;
+    private bool shooting;
 
     private Vector3 mousePosition;
 
@@ -43,6 +47,8 @@ public class RockThrower : MonoBehaviour
         highlight.GetComponent<SpriteRenderer>().color = canBuild;
 
         state = State.SELECT;
+        anim = transform.Find("Content").GetComponent<Animator>();
+        shooting = false;
     }
 
     // Update is called once per frame
@@ -50,23 +56,38 @@ public class RockThrower : MonoBehaviour
     {
         if (state == State.BUILT)
         {
-            if (lastShoot + coolDown < Time.time)
+            if (!shooting)
             {
-                if (currentAmmo > 0)
+                if (lastShoot + coolDown < Time.time)
                 {
-                    if (inRange.Count > 0)
+                    if (currentAmmo > 0)
                     {
-                        if (inRange[0].GetComponent<EnemyStats>().hp > 0)
+                        if (inRange.Count > 0)
                         {
-                            lastShoot = Time.time;
-                            GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                            temp.GetComponent<Projectile>().SetValues(inRange[0], damage);
-                            currentAmmo--;
+                            if (inRange[0].GetComponent<EnemyStats>().hp > 0)
+                            {
+                                lastShoot = Time.time;
+                                startShoot = Time.time;
+                                anim.SetBool("IsThrowing", true);
+                                anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
+                                anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
+                                currentAmmo--;
+                                shooting = true;
+                            }
                         }
                     }
-                } else
+                    else
+                    {
+                        needAmmo.SetActive(true);
+                    }
+                }
+            } else
+            {
+                if (startShoot + delay < Time.time)
                 {
-                    needAmmo.SetActive(true);
+                    GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
+                    temp.GetComponent<Projectile>().SetValues(inRange[0], damage);
+                    shooting = false;
                 }
             }
         } else if (state == State.SELECT)
@@ -74,6 +95,14 @@ public class RockThrower : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
             transform.position = mousePosition;
+        }
+
+        if (MainScript.MSCRIPT.state == MainScript.State.BUILD)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Click();
+            }
         }
     }
 
@@ -85,6 +114,7 @@ public class RockThrower : MonoBehaviour
 
             highlight.SetActive(false);
             state = State.BUILT;
+            transform.Find("Content").gameObject.GetComponent<SpriteRenderer>().enabled = true;
             MainScript.MSCRIPT.state = MainScript.State.GAME;
         } else
         {
@@ -114,10 +144,8 @@ public class RockThrower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.tag == "Enemy")
         {
-            Debug.Log("yup1");
             inRange.Add(collision.gameObject);
         }
     }
@@ -126,7 +154,6 @@ public class RockThrower : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            Debug.Log("yup1");
             inRange.Remove(collision.gameObject);
         }
     }
