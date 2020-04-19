@@ -11,10 +11,6 @@ public class CrocArmorEnemy : MonoBehaviour
     public float speed;
     public GameObject deathPrefab;
 
-    //don't hardcode these, defined in functions
-    private Vector2 resetPoint;
-    private Vector2 knockbackPoint;
-    private float knockbackSpeed;
     private Animator anim;
     private EnemyStats enemyStats;
 
@@ -38,8 +34,8 @@ public class CrocArmorEnemy : MonoBehaviour
         switch (enemyStats.state)
         {
             case EnemyStats.State.OFFPATH:
-                transform.position = Vector3.MoveTowards(transform.position, resetPoint, speed);
-                if (Vector3.Distance(transform.position, resetPoint) < 0.001f)
+                transform.position = Vector3.MoveTowards(transform.position, enemyStats.resetPoint, speed);
+                if (Vector3.Distance(transform.position, enemyStats.resetPoint) < 0.001f)
                 {
                     enemyStats.state = EnemyStats.State.ONPATH;
                 }
@@ -49,8 +45,8 @@ public class CrocArmorEnemy : MonoBehaviour
 
                 break;
             case EnemyStats.State.KNOCKBACK:
-                transform.position = Vector3.MoveTowards(transform.position, knockbackPoint, knockbackSpeed);
-                if (Vector3.Distance(transform.position, knockbackPoint) < 0.001f)
+                transform.position = Vector3.MoveTowards(transform.position, enemyStats.knockbackPoint, enemyStats.knockbackSpeed);
+                if (Vector3.Distance(transform.position, enemyStats.knockbackPoint) < 0.001f)
                 {
                     enemyStats.state = EnemyStats.State.OFFPATH;
                 }
@@ -92,15 +88,6 @@ public class CrocArmorEnemy : MonoBehaviour
             Debug.Log("Oh no, he was hit");
             Destroy(gameObject);
         }
-    }
-    public void Attacked(int damage, Vector3 attackerPos, float knockbackConstant)
-    {
-        enemyStats.hp -= damage;
-        Vector3 dispalcement = knockbackConstant * (transform.position - attackerPos).normalized;
-        knockbackPoint = transform.position + dispalcement;
-        knockbackSpeed = 0.5f * knockbackConstant;
-        resetPoint = transform.position;
-        enemyStats.state = EnemyStats.State.KNOCKBACK;
     }
 
     public void CompletedDeath()

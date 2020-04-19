@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    //don't hardcode these, defined in functions
+    public Vector2 resetPoint;
+    public Vector2 knockbackPoint;
+    public float knockbackSpeed;
     public enum State
     {
         KNOCKBACK,
@@ -31,5 +35,14 @@ public class EnemyStats : MonoBehaviour
 
         anim.SetFloat("SpeedX", (firstPoint.x - transform.position.x));
         anim.SetFloat("SpeedY", (firstPoint.y - transform.position.y));
+    }
+    public void Attacked(int damage, Vector3 attackerPos, float knockbackConstant)
+    {
+        hp -= damage;
+        Vector3 dispalcement = knockbackConstant * (transform.position - attackerPos).normalized;
+        knockbackPoint = transform.position + dispalcement;
+        knockbackSpeed = 0.5f * knockbackConstant;
+        resetPoint = transform.position;
+        state = State.KNOCKBACK;
     }
 }
