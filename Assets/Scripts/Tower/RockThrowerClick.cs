@@ -5,17 +5,22 @@ using UnityEngine;
 public class RockThrowerClick : MonoBehaviour
 {
     RockThrower script;
+    Animator anim;
 
     private void Start()
     {
         script = transform.parent.GetComponent<RockThrower>();
+        anim = GetComponent<Animator>();
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
-        Debug.Log("CLICK");
-        script.Click();
+        if (MainScript.MSCRIPT.state != MainScript.State.MENU)
+        {
+            script.Click();
+        }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,5 +39,10 @@ public class RockThrowerClick : MonoBehaviour
             script.inCollision--;
             script.CollisionUp();
         }
+    }
+
+    public void FinishThrowAnim()
+    {
+        anim.SetBool("IsThrowing", false);
     }
 }

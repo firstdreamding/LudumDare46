@@ -21,7 +21,7 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        MainScript.MSCRIPT.state = MainScript.State.GAME;
+        MainScript.MSCRIPT.state = MainScript.State.BUILD;
         Instantiate(prefab);
         transform.parent.parent.gameObject.SetActive(false);
     }

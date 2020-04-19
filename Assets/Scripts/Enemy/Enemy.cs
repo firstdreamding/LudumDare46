@@ -6,15 +6,10 @@ using System;
 
 public class Enemy : MonoBehaviour
 {
-    public enum State
-    {
-        KNOCKBACK,
-        OFFPATH,
-        ONPATH,
-        DEAD
-    }
+
     
     public float speed;
+    public GameObject deathPrefab;
 
     //don't hardcode these, defined in functions
     private Vector2 resetPoint;
@@ -23,54 +18,41 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private EnemyStats enemyStats;
 
-    public List<Vector2> toNext;
-
-
-    private State state;
-
-    public void Init(Vector2 firstPoint)
+    public void Awake()
     {
         enemyStats = GetComponent<EnemyStats>();
-
-        state = State.ONPATH;
-        toNext = new List<Vector2>();
-        toNext.Add(new Vector3(firstPoint.x, firstPoint.y, transform.position.z));
         anim = GetComponent<Animator>();
-        anim.SetBool("isWalking", true);
-
-        anim.SetFloat("SpeedX", (firstPoint.x - transform.position.x));
-        anim.SetFloat("SpeedY", (firstPoint.y - transform.position.y));
     }
 
     void Update()
     {
-        if (enemyStats.hp == 0 && state != State.DEAD)
+        if (enemyStats.hp == 0 && enemyStats.state != EnemyStats.State.DEAD)
         {
-            state = State.DEAD;
+            enemyStats.state = EnemyStats.State.DEAD;
             anim.SetBool("Dead", true);
             GetComponent<BoxCollider2D>().enabled = false;
         }
     }
     private void FixedUpdate()
     {
-        switch (state)
+        switch (enemyStats.state)
         {
-            case State.OFFPATH:
+            case EnemyStats.State.OFFPATH:
                 transform.position = Vector3.MoveTowards(transform.position, resetPoint, speed);
                 if (Vector3.Distance(transform.position, resetPoint) < 0.001f)
                 {
-                    state = State.ONPATH;
+                    enemyStats.state = EnemyStats.State.ONPATH;
                 }
                 break;
-            case State.ONPATH:
+            case EnemyStats.State.ONPATH:
                 OnPath();
 
                 break;
-            case State.KNOCKBACK:
+            case EnemyStats.State.KNOCKBACK:
                 transform.position = Vector3.MoveTowards(transform.position, knockbackPoint, knockbackSpeed);
                 if (Vector3.Distance(transform.position, knockbackPoint) < 0.001f)
                 {
-                    state = State.OFFPATH;
+                    enemyStats.state = EnemyStats.State.OFFPATH;
                 }
                 break;
         }
@@ -78,16 +60,16 @@ public class Enemy : MonoBehaviour
 
     private void OnPath()
     {
-        if (toNext.Count > 0)
+        if (enemyStats.toNext.Count > 0)
         {
-            transform.position = Vector2.MoveTowards(transform.position, toNext[0], speed);
-            if (transform.position.x == toNext[0].x && transform.position.y == toNext[0].y)
+            transform.position = Vector2.MoveTowards(transform.position, enemyStats.toNext[0], speed);
+            if (transform.position.x == enemyStats.toNext[0].x && transform.position.y == enemyStats.toNext[0].y)
             {
-                toNext.Remove(toNext[0]);
-                if (toNext.Count > 0)
+                enemyStats.toNext.Remove(enemyStats.toNext[0]);
+                if (enemyStats.toNext.Count > 0)
                 {
-                    anim.SetFloat("SpeedX", (toNext[0].x - transform.position.x));
-                    anim.SetFloat("SpeedY", (toNext[0].y - transform.position.y));
+                    anim.SetFloat("SpeedX", (enemyStats.toNext[0].x - transform.position.x));
+                    anim.SetFloat("SpeedY", (enemyStats.toNext[0].y - transform.position.y));
                 }
             }
         }
@@ -98,12 +80,11 @@ public class Enemy : MonoBehaviour
 
         if (collision.tag == "Projectile")
         {
-            Debug.Log("Ouch");
             enemyStats.hp = (int)(enemyStats.hp - collision.GetComponent<Projectile>().GetDamage());
         } else if (collision.tag == "PathTurn")
         {
             Vector2 tempVec = collision.gameObject.GetComponent<TurnTile>().targetMove;
-            toNext.Add(tempVec);
+            enemyStats.toNext.Add(tempVec);
         } else if (collision.tag == "Pharaoh")
         {
             Debug.Log("Oh no, he was hit");
@@ -117,11 +98,12 @@ public class Enemy : MonoBehaviour
         knockbackPoint = transform.position + dispalcement;
         knockbackSpeed = 0.5f * knockbackConstant;
         resetPoint = transform.position;
-        state = State.KNOCKBACK;
+        enemyStats.state = EnemyStats.State.KNOCKBACK;
     }
 
     public void CompletedDeath()
     {
+        Instantiate(deathPrefab, new Vector3(transform.position.x, transform.position.y, -4), Quaternion.identity);
         Destroy(gameObject);
     }
 }

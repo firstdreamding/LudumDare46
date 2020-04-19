@@ -5,7 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed;
-    private GameObject target;
+    public float timeLast;
+    private Vector3 normalizedDirection;
     private float step;
     private float damage;
 
@@ -13,23 +14,18 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         step = speed;
+        Destroy(gameObject, timeLast);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (target != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z), step);
-        } else
-        {
-            Destroy(gameObject);
-        }
+        transform.position += normalizedDirection * speed;
     }
 
     public void SetValues(GameObject target, float damage)
     {
-        this.target = target;
+        normalizedDirection = (new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z) - transform.position).normalized;
         this.damage = damage;
     }
 
