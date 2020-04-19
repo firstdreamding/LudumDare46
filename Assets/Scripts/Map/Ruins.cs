@@ -14,12 +14,12 @@ public class Ruins : MonoBehaviour
     // Start is called before the first frame update
     private State state;
     private SpriteRenderer spr;
-    private float spawnRate = 1.00f;
-    private WaitForSeconds delay = new WaitForSeconds(2);
-    static string[] drops = { "GOLD", "SCRAP", "SCYTHE" };
+    private float spawnRate = 1f;
+    private WaitForSeconds delay = new WaitForSeconds(1);
+    static string[] drops = { "COIN", "SCRAP", "SCYTHE" };
     static float[] probs = { 0.5f, 0.75f, 1.01f };
 
-    private string selectedDrop = "EMPTY";
+    private string selectedDrop;
     void Start()
     {
         state = State.EMPTY;
@@ -27,18 +27,12 @@ public class Ruins : MonoBehaviour
         spr.sprite = emptyRuin;
         StartCoroutine("Spawner");
     }
-    public string Use()
+    public void Use()
     {
-        string returnval = selectedDrop;
-        if (state == State.FULL)
-        {
-            spr.sprite = emptyRuin;
-            state = State.EMPTY;
-            selectedDrop = "EMPTY";
-        }
-        return returnval;
+        Debug.Log(selectedDrop);
+        spr.sprite = emptyRuin;
+        state = State.EMPTY;
     }
-
     IEnumerator Spawner()
     {
         while (true)
