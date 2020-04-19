@@ -4,10 +4,10 @@ using UnityEngine;
 using System;
 
 
-public class Enemy : MonoBehaviour
+public class CrocArmorEnemy : MonoBehaviour
 {
 
-    
+
     public float speed;
     public GameObject deathPrefab;
 
@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
 
     public void Awake()
     {
-        enemyStats = GetComponent<EnemyStats>();
         anim = GetComponent<Animator>();
+        enemyStats = GetComponent<EnemyStats>();
     }
 
     void Update()
@@ -81,11 +81,13 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "Projectile")
         {
             enemyStats.hp = (int)(enemyStats.hp - collision.GetComponent<Projectile>().GetDamage());
-        } else if (collision.tag == "PathTurn")
+        }
+        else if (collision.tag == "PathTurn")
         {
             Vector2 tempVec = collision.gameObject.GetComponent<TurnTile>().targetMove;
             enemyStats.toNext.Add(tempVec);
-        } else if (collision.tag == "Pharaoh")
+        }
+        else if (collision.tag == "Pharaoh")
         {
             Debug.Log("Oh no, he was hit");
             Destroy(gameObject);

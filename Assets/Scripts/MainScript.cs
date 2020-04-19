@@ -14,6 +14,7 @@ public class MainScript : MonoBehaviour
     }
     public State state;
     public List<GameObject> towerActive;
+    public GameObject towerTemp;
 
     private GameObject buyMenu;
 
@@ -42,6 +43,12 @@ public class MainScript : MonoBehaviour
             {
                 buyMenu.SetActive(true);
                 state = State.MENU;
+            }
+        } else if (state == State.BUILD)
+        {
+            if (Input.GetKey(KeyCode.Escape) && towerTemp != null)
+            {
+                Destroy(towerTemp);
             }
         }
     }

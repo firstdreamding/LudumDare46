@@ -1,103 +1,103 @@
 fileFormatVersion: 2
-guid: d58567159dae88640a269b04112389c7
+guid: 0b2df4dcb6b294445a1a8d00fd1faa7c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3668707373254694359
-    second: Enemy_Char_Ex_0
+      213: 3640624233754205867
+    second: Enemy_2_Char_Ex_0
   - first:
-      213: -2221054548447913937
-    second: Enemy_Char_Ex_1
+      213: -8768409424753505662
+    second: Enemy_2_Char_Ex_1
   - first:
-      213: 6959307597555562252
-    second: Enemy_Char_Ex_2
+      213: -8800150129420229934
+    second: Enemy_2_Char_Ex_2
   - first:
-      213: 1473400302627124046
-    second: Enemy_Char_Ex_3
+      213: 3771787192905373460
+    second: Enemy_2_Char_Ex_3
   - first:
-      213: -6248112770346798325
-    second: Enemy_Char_Ex_4
+      213: 2968120801934767176
+    second: Enemy_2_Char_Ex_4
   - first:
-      213: -6401555952760966731
-    second: Enemy_Char_Ex_5
+      213: -9198753152309428224
+    second: Enemy_2_Char_Ex_5
   - first:
-      213: -1128593411806814643
-    second: Enemy_Char_Ex_6
+      213: 4816747901743349713
+    second: Enemy_2_Char_Ex_6
   - first:
-      213: -6687024701518858103
-    second: Enemy_Char_Ex_7
+      213: 3489125770582647153
+    second: Enemy_2_Char_Ex_7
   - first:
-      213: -468363475683578613
-    second: Enemy_Char_Ex_8
+      213: -3255950325022849903
+    second: Enemy_2_Char_Ex_8
   - first:
-      213: 4064662547980432914
-    second: Enemy_Char_Ex_9
+      213: 7855998496720133847
+    second: Enemy_2_Char_Ex_9
   - first:
-      213: 765727222175171675
-    second: Enemy_Char_Ex_10
+      213: 3023794845132168883
+    second: Enemy_2_Char_Ex_10
   - first:
-      213: -6918577439215128363
-    second: Enemy_Char_Ex_11
+      213: 3110805376199912916
+    second: Enemy_2_Char_Ex_11
   - first:
-      213: -8147632945180363992
-    second: Enemy_Char_Ex_12
+      213: -8516995129670506599
+    second: Enemy_2_Char_Ex_12
   - first:
-      213: -6176720801543850159
-    second: Enemy_Char_Ex_13
+      213: 2851790634834032667
+    second: Enemy_2_Char_Ex_13
   - first:
-      213: 1942209008407661391
-    second: Enemy_Char_Ex_14
+      213: -111569059395273977
+    second: Enemy_2_Char_Ex_14
   - first:
-      213: 185643736851728337
-    second: Enemy_Char_Ex_15
+      213: 7603861665148055874
+    second: Enemy_2_Char_Ex_15
   - first:
-      213: -6351664393804521564
-    second: Enemy_Char_Ex_16
+      213: -5817112961378560788
+    second: Enemy_2_Char_Ex_16
   - first:
-      213: 88266581199148487
-    second: Enemy_Char_Ex_17
+      213: -6856044143703551112
+    second: Enemy_2_Char_Ex_17
   - first:
-      213: 2206270137673600327
-    second: Enemy_Char_Ex_18
+      213: -767573949544514383
+    second: Enemy_2_Char_Ex_18
   - first:
-      213: -1735056581428123787
-    second: Enemy_Char_Ex_19
+      213: 1066816709787969605
+    second: Enemy_2_Char_Ex_19
   - first:
-      213: 2119226374809334636
-    second: Enemy_Char_Ex_20
+      213: -4352954060401202860
+    second: Enemy_2_Char_Ex_20
   - first:
-      213: 6095857868081143968
-    second: Enemy_Char_Ex_21
+      213: 6863804999944238133
+    second: Enemy_2_Char_Ex_21
   - first:
-      213: 4040530627173634127
-    second: Enemy_Char_Ex_22
+      213: -6369422590859006954
+    second: Enemy_2_Char_Ex_22
   - first:
-      213: -7838676538097522511
-    second: Enemy_Char_Ex_23
+      213: -8877280707766203147
+    second: Enemy_2_Char_Ex_23
   - first:
-      213: -791061914454416644
-    second: Enemy_Char_Ex_24
+      213: -5669937587399041928
+    second: Enemy_2_Char_Ex_24
   - first:
-      213: 8370304630813709913
-    second: Enemy_Char_Ex_25
+      213: 8151908623934910210
+    second: Enemy_2_Char_Ex_25
   - first:
-      213: 8586514101663843785
-    second: Enemy_Char_Ex_26
+      213: 3338735937184923027
+    second: Enemy_2_Char_Ex_26
   - first:
-      213: 5652584965384636667
-    second: Enemy_Char_Ex_27
+      213: -9025785806997078331
+    second: Enemy_2_Char_Ex_27
   - first:
-      213: 1628559888419558133
-    second: Enemy_Char_Ex_28
+      213: 1342295098161369911
+    second: Enemy_2_Char_Ex_28
   - first:
-      213: -214507504010913926
-    second: Enemy_Char_Ex_29
+      213: 3872454281691995388
+    second: Enemy_2_Char_Ex_29
   - first:
-      213: 5234834078615006055
-    second: Enemy_Char_Ex_30
+      213: -8640831784698802497
+    second: Enemy_2_Char_Ex_30
   - first:
-      213: -8616727540252151008
-    second: Enemy_Char_Ex_31
+      213: -8523404674151128951
+    second: Enemy_2_Char_Ex_31
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -160,7 +160,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -172,7 +172,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -184,7 +184,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -196,7 +196,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -207,7 +207,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy_Char_Ex_0
+      name: Enemy_2_Char_Ex_0
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7333a5d9bd59874489d0822a41ac7743
-      internalID: 3668707373254694359
+      spriteID: 421319370663b444f968d22988c36f95
+      internalID: 3640624233754205867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_1
+      name: Enemy_2_Char_Ex_1
       rect:
         serializedVersion: 2
         x: 48
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 712fe6b46f13a314c9420a6715df93b9
-      internalID: -2221054548447913937
+      spriteID: 0356f86fcf0c9b74492b694465c93225
+      internalID: -8768409424753505662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_2
+      name: Enemy_2_Char_Ex_2
       rect:
         serializedVersion: 2
         x: 96
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 219ddb67bdd2a654785febe7df9e2ca6
-      internalID: 6959307597555562252
+      spriteID: ea028c4d05f20d54cb151a70fbe7db2e
+      internalID: -8800150129420229934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_3
+      name: Enemy_2_Char_Ex_3
       rect:
         serializedVersion: 2
         x: 144
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 511c969b4ff24cd49b71af173a839f26
-      internalID: 1473400302627124046
+      spriteID: 45a6b688eafc4c94bb87ad29e5dd756b
+      internalID: 3771787192905373460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_4
+      name: Enemy_2_Char_Ex_4
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 598e926467bba3b43b4e0c02afaed7b0
-      internalID: -6248112770346798325
+      spriteID: a37aff3017e7db54ab62639d70d3fc16
+      internalID: 2968120801934767176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_5
+      name: Enemy_2_Char_Ex_5
       rect:
         serializedVersion: 2
         x: 48
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bebddb2c7a6ba2469c310b1f7af179b
-      internalID: -6401555952760966731
+      spriteID: f596e3b853ca0864493ea4a57a9723a3
+      internalID: -9198753152309428224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_6
+      name: Enemy_2_Char_Ex_6
       rect:
         serializedVersion: 2
         x: 96
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44caac090611ec458a8944a980148c0
-      internalID: -1128593411806814643
+      spriteID: 9b4c41a94f13c25499ee68173a1518ba
+      internalID: 4816747901743349713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_7
+      name: Enemy_2_Char_Ex_7
       rect:
         serializedVersion: 2
         x: 144
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 827a1f04daa25164bafe31839f0e956c
-      internalID: -6687024701518858103
+      spriteID: d9cf4142692ab2b429655210f5ab9c2b
+      internalID: 3489125770582647153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_8
+      name: Enemy_2_Char_Ex_8
       rect:
         serializedVersion: 2
         x: 0
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4955efc7c011d17439eb22bf80c6a0b1
-      internalID: -468363475683578613
+      spriteID: aa44605dd416aad419c08ce27bec9fed
+      internalID: -3255950325022849903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_9
+      name: Enemy_2_Char_Ex_9
       rect:
         serializedVersion: 2
         x: 48
@@ -410,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 219a42b5d29b00d46becde8998defc49
-      internalID: 4064662547980432914
+      spriteID: 8ab3423fb17f6e740bc6e9cd3f315cca
+      internalID: 7855998496720133847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_10
+      name: Enemy_2_Char_Ex_10
       rect:
         serializedVersion: 2
         x: 96
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 055bd5bd3912d504a9e632798d01b7db
-      internalID: 765727222175171675
+      spriteID: 430073336274fa045be3eb288698da1c
+      internalID: 3023794845132168883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_11
+      name: Enemy_2_Char_Ex_11
       rect:
         serializedVersion: 2
         x: 144
@@ -452,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb8eca8fb7f3a654083d13b9ae8175fe
-      internalID: -6918577439215128363
+      spriteID: 2bd2af0b046f69f4183b93b36697df57
+      internalID: 3110805376199912916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_12
+      name: Enemy_2_Char_Ex_12
       rect:
         serializedVersion: 2
         x: 0
@@ -473,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8034201fef0873547b6fbb8a485ef4c9
-      internalID: -8147632945180363992
+      spriteID: b0b17b0395f56b445aed0a1c28053328
+      internalID: -8516995129670506599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_13
+      name: Enemy_2_Char_Ex_13
       rect:
         serializedVersion: 2
         x: 48
@@ -494,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412a861a09f2b444e9fe4e6fb74aecd4
-      internalID: -6176720801543850159
+      spriteID: 79108aa604c0eee428b59f24d1cd2e55
+      internalID: 2851790634834032667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_14
+      name: Enemy_2_Char_Ex_14
       rect:
         serializedVersion: 2
         x: 96
@@ -515,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2898e218a8bd8647a2c2fd76b1dc0d4
-      internalID: 1942209008407661391
+      spriteID: 584a10802ef0c67428a5067f70ac4053
+      internalID: -111569059395273977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_15
+      name: Enemy_2_Char_Ex_15
       rect:
         serializedVersion: 2
         x: 144
@@ -536,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e691af90c1daa4aa0f050a7ffc517c
-      internalID: 185643736851728337
+      spriteID: c5d8285c63105804d8a0f288d7b1d435
+      internalID: 7603861665148055874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_16
+      name: Enemy_2_Char_Ex_16
       rect:
         serializedVersion: 2
         x: 0
@@ -557,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c11d46b92f86ad4b86c742d1754db7c
-      internalID: -6351664393804521564
+      spriteID: 150b1ac891838b94287d29708067c12e
+      internalID: -5817112961378560788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_17
+      name: Enemy_2_Char_Ex_17
       rect:
         serializedVersion: 2
         x: 48
@@ -578,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 584d3db5b4a60ff4e8519d059b726135
-      internalID: 88266581199148487
+      spriteID: 2b58cfa2476d2c44aa89735d81742571
+      internalID: -6856044143703551112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_18
+      name: Enemy_2_Char_Ex_18
       rect:
         serializedVersion: 2
         x: 96
@@ -599,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 501eb31ac7eabb942bebe83650917bfc
-      internalID: 2206270137673600327
+      spriteID: d1394b859ed308e4881ec4432e226cf7
+      internalID: -767573949544514383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_19
+      name: Enemy_2_Char_Ex_19
       rect:
         serializedVersion: 2
         x: 144
@@ -620,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46285a11b5b0fb14b89150d2bfecacd2
-      internalID: -1735056581428123787
+      spriteID: 545cf2f3f088aca41bd89eb68b580f9e
+      internalID: 1066816709787969605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_20
+      name: Enemy_2_Char_Ex_20
       rect:
         serializedVersion: 2
         x: 0
@@ -641,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 554ad3be4f933f84bbcb4347180fb7a4
-      internalID: 2119226374809334636
+      spriteID: a52ac4acba9197f41a5e8eda9dbcede7
+      internalID: -4352954060401202860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_21
+      name: Enemy_2_Char_Ex_21
       rect:
         serializedVersion: 2
         x: 48
@@ -662,14 +662,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a719c9451d476a4eab3f6fd4252c563
-      internalID: 6095857868081143968
+      spriteID: dd270aecfe3652549b61a1d7a4132113
+      internalID: 6863804999944238133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_22
+      name: Enemy_2_Char_Ex_22
       rect:
         serializedVersion: 2
         x: 96
@@ -683,14 +683,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0f4a3ad41c806e489258a126a8fb011
-      internalID: 4040530627173634127
+      spriteID: f49aa607eaefe7c4abfd7a46ff434de7
+      internalID: -6369422590859006954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_23
+      name: Enemy_2_Char_Ex_23
       rect:
         serializedVersion: 2
         x: 144
@@ -704,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b93ac611ff627c143ac402dabaa4975a
-      internalID: -7838676538097522511
+      spriteID: 818fb39376cca8e4c96841ba7318d54a
+      internalID: -8877280707766203147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_24
+      name: Enemy_2_Char_Ex_24
       rect:
         serializedVersion: 2
         x: 0
@@ -725,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7aec03438133b14984e638dcc42c0aa
-      internalID: -791061914454416644
+      spriteID: 15be1ed67e1782c478f5953819fcf830
+      internalID: -5669937587399041928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_25
+      name: Enemy_2_Char_Ex_25
       rect:
         serializedVersion: 2
         x: 48
@@ -746,14 +746,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d1baf0e57d017141a7d2b514ab0b076
-      internalID: 8370304630813709913
+      spriteID: e045857351514384cb8447265858f5e2
+      internalID: 8151908623934910210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_26
+      name: Enemy_2_Char_Ex_26
       rect:
         serializedVersion: 2
         x: 96
@@ -767,14 +767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98e7146b74c2c1949abfb78a280ebace
-      internalID: 8586514101663843785
+      spriteID: 7061afe59abb0934fba6a974240be6d1
+      internalID: 3338735937184923027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_27
+      name: Enemy_2_Char_Ex_27
       rect:
         serializedVersion: 2
         x: 144
@@ -788,14 +788,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34f73513f6eea4845af5c3246a7c37c5
-      internalID: 5652584965384636667
+      spriteID: 0edda737609e0954bbed50a9345a7c1a
+      internalID: -9025785806997078331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_28
+      name: Enemy_2_Char_Ex_28
       rect:
         serializedVersion: 2
         x: 0
@@ -809,14 +809,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 255f27b5102abf849978af57877d6e0e
-      internalID: 1628559888419558133
+      spriteID: ed3f305641bf5964785a6fce2228bcc3
+      internalID: 1342295098161369911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_29
+      name: Enemy_2_Char_Ex_29
       rect:
         serializedVersion: 2
         x: 48
@@ -830,14 +830,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d96bccadad9ded43997a4a900fc8074
-      internalID: -214507504010913926
+      spriteID: ef32b869185b52945a53e636bc70d56b
+      internalID: 3872454281691995388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_30
+      name: Enemy_2_Char_Ex_30
       rect:
         serializedVersion: 2
         x: 96
@@ -851,14 +851,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 984e4f50e9f168147bc077e4f16c947c
-      internalID: 5234834078615006055
+      spriteID: 4c4ee94fdd4259744b95b6f3ec1a4640
+      internalID: -8640831784698802497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Char_Ex_31
+      name: Enemy_2_Char_Ex_31
       rect:
         serializedVersion: 2
         x: 144
@@ -872,8 +872,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3af3414e8a3b38841932075ad29bf4ba
-      internalID: -8616727540252151008
+      spriteID: 28af54281af321c4bb12cb7ae79cce4c
+      internalID: -8523404674151128951
       vertices: []
       indices: 
       edges: []
@@ -881,7 +881,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d86485fa7340d7e478b1a801606e82c7
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.02
+  deathPrefab: {fileID: 5452568145918339602, guid: 7803687ab22079f4c93d7d17af042605,
+    type: 3}
   toNext: []
 --- !u!114 &7808758266358741944
 MonoBehaviour:
@@ -179,4 +181,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7e003cbae73184da06efdb4e0a25b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  state: 0
+  hp: 10

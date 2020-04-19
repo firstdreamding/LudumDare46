@@ -52,14 +52,17 @@ public class RockThrower : MonoBehaviour
         {
             if (lastShoot + coolDown < Time.time)
             {
-                if (currentAmmo > 0 && inRange.Count > 0)
+                if (currentAmmo > 0)
                 {
-                    if (inRange[0].GetComponent<EnemyStats>().hp > 0)
+                    if (inRange.Count > 0)
                     {
-                        lastShoot = Time.time;
-                        GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                        temp.GetComponent<Projectile>().SetValues(inRange[0], damage);
-                        currentAmmo--;
+                        if (inRange[0].GetComponent<EnemyStats>().hp > 0)
+                        {
+                            lastShoot = Time.time;
+                            GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
+                            temp.GetComponent<Projectile>().SetValues(inRange[0], damage);
+                            currentAmmo--;
+                        }
                     }
                 } else
                 {
@@ -82,6 +85,7 @@ public class RockThrower : MonoBehaviour
 
             highlight.SetActive(false);
             state = State.BUILT;
+            MainScript.MSCRIPT.state = MainScript.State.GAME;
         } else
         {
             Debug.Log("CANNOT BUILD");

@@ -11,11 +11,15 @@ public class RockThrowerClick : MonoBehaviour
         script = transform.parent.GetComponent<RockThrower>();
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
-        Debug.Log("CLICK");
-        script.Click();
+        if (MainScript.MSCRIPT.state != MainScript.State.MENU)
+        {
+            Debug.Log("CLICK");
+            script.Click();
+        }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
