@@ -25,9 +25,16 @@ public class Scythe : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy" && canHit(collision.GetComponent<EnemyStats>().GetInstanceID()))
         {
             collision.GetComponent<EnemyStats>().Attacked(damage, transform.position, knockback, 0.5f);
         }
+    }
+    HashSet<int> enemiesHit = new HashSet<int>();
+    internal bool canHit(int v)
+    {
+        if (enemiesHit.Contains(v)) return false;
+        enemiesHit.Add(v);
+        return true;
     }
 }
