@@ -24,6 +24,7 @@ public class CrocArmorEnemy : MonoBehaviour
             enemyStats.state = EnemyStats.State.DEAD;
             anim.SetBool("Dead", true);
             GetComponent<BoxCollider2D>().enabled = false;
+            PlayerScript.player.incGold(5);
         }
     }
     private void FixedUpdate()

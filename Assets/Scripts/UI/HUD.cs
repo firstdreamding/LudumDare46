@@ -5,6 +5,16 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
+    public static HUD hud;
+
+    void Awake()
+    {
+        if (hud != null)
+        {
+            Destroy(hud);
+        }
+        hud = this;
+    }
     Text goldText;
     Text waveText;
     public void setGold(int count)
