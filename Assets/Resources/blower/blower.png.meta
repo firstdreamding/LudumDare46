@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: 67e0dc56f0b1d9b4bac65916d2b562cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3777865475986572867
+    second: blower_0
+  - first:
+      213: -3530506664927874480
+    second: blower_1
+  - first:
+      213: 3534367613265100785
+    second: blower_2
+  - first:
+      213: 5189511788958650973
+    second: blower_3
+  - first:
+      213: -4964929405148196496
+    second: blower_4
+  - first:
+      213: 1160041975970748227
+    second: blower_5
+  - first:
+      213: 7025925301603774195
+    second: blower_6
+  - first:
+      213: -9202655626465102308
+    second: blower_7
+  - first:
+      213: -5763878163032423033
+    second: blower_8
+  - first:
+      213: 8903592087834948145
+    second: blower_9
+  - first:
+      213: 11310349311348961
+    second: blower_10
+  - first:
+      213: 6082417276964357315
+    second: blower_11
+  - first:
+      213: -8178984288227965537
+    second: blower_12
+  - first:
+      213: -1383377068260378097
+    second: blower_13
+  - first:
+      213: 7970023868957467720
+    second: blower_14
+  - first:
+      213: 3119244683230558825
+    second: blower_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blower_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 30
+        height: 36
+      alignment: 9
+      pivot: {x: 0.49999997, y: -0.0038748847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9de8b944adde7b4fac1d678acd94422
+      internalID: 3777865475986572867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 149
+        width: 26
+        height: 36
+      alignment: 9
+      pivot: {x: 0.4971978, y: 0.00017250908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c773932f5018b4fa598ef41f18e443
+      internalID: -3530506664927874480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 149
+        width: 26
+        height: 43
+      alignment: 9
+      pivot: {x: 0.4999997, y: -0.0014747797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60dde763842c78546b5d61b26d756332
+      internalID: 3534367613265100785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 149
+        width: 30
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5040858, y: -0.0005251567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b5a18b4ea795a46b6105f927ae4945
+      internalID: 5189511788958650973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 101
+        width: 30
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5050932, y: -0.005078634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0923de0e05ba3264382c2990365f2a94
+      internalID: -4964929405148196496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_5
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 101
+        width: 25
+        height: 36
+      alignment: 9
+      pivot: {x: 0.50611174, y: -0.005078634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea3e69112538f9458324cea826ad43d
+      internalID: 1160041975970748227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_6
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 101
+        width: 27
+        height: 43
+      alignment: 9
+      pivot: {x: 0.50565904, y: -0.0010315651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba45a6c628da61945b9bf95060815526
+      internalID: 7025925301603774195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 101
+        width: 28
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5054569, y: -0.005078634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97820025a0c26145b2289fc41a51d0f
+      internalID: -9202655626465102308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 54
+        width: 22
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4968563, y: 0.007855867}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53238cf4ac25b4428a9752962c9dada
+      internalID: -5763878163032423033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 54
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4761818, y: 0.007855365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90641e047e0c0c44e92a047f35d4280c
+      internalID: 8903592087834948145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 54
+        width: 24
+        height: 42
+      alignment: 9
+      pivot: {x: 0.52654964, y: -0.018489111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1df3b605ffe17bd498e167f340434344
+      internalID: 11310349311348961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 50
+        width: 26
+        height: 42
+      alignment: 9
+      pivot: {x: 0.41689184, y: 0.1173894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7e971082bf40049aaf3bf4b60618ab
+      internalID: 6082417276964357315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 6
+        width: 22
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5031442, y: -0.001987658}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d655e827879c84049bd9723dc456539c
+      internalID: -8178984288227965537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 6
+        width: 25
+        height: 38
+      alignment: 9
+      pivot: {x: 0.53157747, y: 0.037019666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f5a527e01bdf544b18b1a81f88ae37
+      internalID: -1383377068260378097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 6
+        width: 24
+        height: 42
+      alignment: 9
+      pivot: {x: 0.47691217, y: 0.018449966}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e987e70f4e15e9c4eb1ff46d05626181
+      internalID: 7970023868957467720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blower_15
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 2
+        width: 26
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5584708, y: 0.11129407}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525308adaa998f840b6e9fe093dd7f7d
+      internalID: 3119244683230558825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0ca1d31e523deb6429599730ae51ebc9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
