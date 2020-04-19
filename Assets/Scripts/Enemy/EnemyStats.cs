@@ -42,10 +42,11 @@ public class EnemyStats : MonoBehaviour
     public void Attacked(int damage, Vector3 attackerPos, float knockbackConstant, float knockbackSpeed)
     {
         hp -= damage;
-        Vector3 dispalcement = knockbackConstant * (transform.position - attackerPos).normalized;
-        knockbackPoint = transform.position + dispalcement;
+        Vector2 displacement = knockbackConstant * (transform.position - attackerPos).normalized;
+        knockbackPoint = (Vector2)transform.position + displacement;
         this.knockbackSpeed = knockbackSpeed * knockbackConstant;
-        resetPoint = transform.position;
+        Vector2 b = toNext[0] - (Vector2)transform.position;
+        resetPoint = (Vector2)transform.position + b * Vector2.Dot(displacement, b) / Vector2.Dot(b, b);
         state = State.KNOCKBACK;
     }
 

@@ -40,12 +40,16 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyStats.State.ONPATH:
                 OnPath();
-
                 break;
             case EnemyStats.State.KNOCKBACK:
                 transform.position = Vector3.MoveTowards(transform.position, enemyStats.knockbackPoint, enemyStats.knockbackSpeed);
                 if (Vector3.Distance(transform.position, enemyStats.knockbackPoint) < 0.001f)
                 {
+                    //Vector2 b = enemyStats.toNext[0] - enemyStats.resetPoint;
+                    //Vector2 displacement = (Vector2)transform.position - enemyStats.resetPoint;
+                    //enemyStats.resetPoint = enemyStats.resetPoint + b * Vector2.Dot(displacement, b) / Vector2.Dot(b, b);
+                    //Debug.Log(enemyStats.resetPoint + " ARRIVED");
+                    //Instantiate(deathPrefab, enemyStats.resetPoint, Quaternion.identity);
                     enemyStats.state = EnemyStats.State.OFFPATH;
                 }
                 break;

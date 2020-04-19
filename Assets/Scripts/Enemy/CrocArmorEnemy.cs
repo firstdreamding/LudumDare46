@@ -39,7 +39,6 @@ public class CrocArmorEnemy : MonoBehaviour
                 break;
             case EnemyStats.State.ONPATH:
                 OnPath();
-
                 break;
             case EnemyStats.State.KNOCKBACK:
                 transform.position = Vector3.MoveTowards(transform.position, enemyStats.knockbackPoint, enemyStats.knockbackSpeed);
