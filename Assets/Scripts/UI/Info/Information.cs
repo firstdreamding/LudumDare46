@@ -57,5 +57,6 @@ public class Information : MonoBehaviour
     public void Fire()
     {
         Destroy(currentGameObject);
+        Close();
     }
 }

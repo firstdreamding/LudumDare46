@@ -110,7 +110,7 @@ public class Blower : MonoBehaviour
         if (state != State.SELECT)
         {
             information.SetActive(true);
-            information.GetComponent<Information>().SetInfo(damage, coolDown, ts);
+            information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
 
             Reload();
         }
