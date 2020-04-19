@@ -112,7 +112,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,7 +124,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,17 +139,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 149
-        width: 30
-        height: 36
-      alignment: 9
-      pivot: {x: 0.49999997, y: -0.0038748847}
+        y: 144
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9de8b944adde7b4fac1d678acd94422
+      spriteID: 3804be48513ca314f98bd19f04b72af9
       internalID: 3777865475986572867
       vertices: []
       indices: 
@@ -159,18 +159,18 @@ TextureImporter:
       name: blower_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 149
-        width: 26
-        height: 36
-      alignment: 9
-      pivot: {x: 0.4971978, y: 0.00017250908}
+        x: 32
+        y: 144
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27c773932f5018b4fa598ef41f18e443
+      spriteID: a7ae8356df987fc4e8d97ac0f52514fb
       internalID: -3530506664927874480
       vertices: []
       indices: 
@@ -180,18 +180,18 @@ TextureImporter:
       name: blower_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 149
-        width: 26
-        height: 43
-      alignment: 9
-      pivot: {x: 0.4999997, y: -0.0014747797}
+        x: 64
+        y: 144
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60dde763842c78546b5d61b26d756332
+      spriteID: 7d8889432f3d4094dade499ad70fc209
       internalID: 3534367613265100785
       vertices: []
       indices: 
@@ -202,17 +202,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 149
-        width: 30
-        height: 36
-      alignment: 9
-      pivot: {x: 0.5040858, y: -0.0005251567}
+        y: 144
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39b5a18b4ea795a46b6105f927ae4945
+      spriteID: 17a57fa7e56c30a409804b0f933a9ec6
       internalID: 5189511788958650973
       vertices: []
       indices: 
@@ -222,18 +222,18 @@ TextureImporter:
       name: blower_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 101
-        width: 30
-        height: 36
-      alignment: 9
-      pivot: {x: 0.5050932, y: -0.005078634}
+        x: 0
+        y: 96
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0923de0e05ba3264382c2990365f2a94
+      spriteID: adfed1d5a3047f344a8e8bfdf701b711
       internalID: -4964929405148196496
       vertices: []
       indices: 
@@ -243,18 +243,18 @@ TextureImporter:
       name: blower_5
       rect:
         serializedVersion: 2
-        x: 35
-        y: 101
-        width: 25
-        height: 36
-      alignment: 9
-      pivot: {x: 0.50611174, y: -0.005078634}
+        x: 32
+        y: 96
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ea3e69112538f9458324cea826ad43d
+      spriteID: e22479f395bc0164f835475357e2391f
       internalID: 1160041975970748227
       vertices: []
       indices: 
@@ -264,18 +264,18 @@ TextureImporter:
       name: blower_6
       rect:
         serializedVersion: 2
-        x: 65
-        y: 101
-        width: 27
-        height: 43
-      alignment: 9
-      pivot: {x: 0.50565904, y: -0.0010315651}
+        x: 64
+        y: 96
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba45a6c628da61945b9bf95060815526
+      spriteID: 372e1443bbb4e8a44a46196eeaac2d34
       internalID: 7025925301603774195
       vertices: []
       indices: 
@@ -285,18 +285,18 @@ TextureImporter:
       name: blower_7
       rect:
         serializedVersion: 2
-        x: 100
-        y: 101
-        width: 28
-        height: 36
-      alignment: 9
-      pivot: {x: 0.5054569, y: -0.005078634}
+        x: 96
+        y: 96
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e97820025a0c26145b2289fc41a51d0f
+      spriteID: e7e209b568885974ca8b05b67c0931c7
       internalID: -9202655626465102308
       vertices: []
       indices: 
@@ -306,18 +306,18 @@ TextureImporter:
       name: blower_8
       rect:
         serializedVersion: 2
-        x: 5
-        y: 54
-        width: 22
-        height: 38
-      alignment: 9
-      pivot: {x: 0.4968563, y: 0.007855867}
+        x: 0
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a53238cf4ac25b4428a9752962c9dada
+      spriteID: 97855bd81a6d90f4d8d0e2101b2c4812
       internalID: -5763878163032423033
       vertices: []
       indices: 
@@ -327,18 +327,18 @@ TextureImporter:
       name: blower_9
       rect:
         serializedVersion: 2
-        x: 37
-        y: 54
-        width: 25
-        height: 38
-      alignment: 9
-      pivot: {x: 0.4761818, y: 0.007855365}
+        x: 32
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90641e047e0c0c44e92a047f35d4280c
+      spriteID: cd5d1c352b14524419717fdec35a804c
       internalID: 8903592087834948145
       vertices: []
       indices: 
@@ -348,18 +348,18 @@ TextureImporter:
       name: blower_10
       rect:
         serializedVersion: 2
-        x: 67
-        y: 54
-        width: 24
-        height: 42
-      alignment: 9
-      pivot: {x: 0.52654964, y: -0.018489111}
+        x: 64
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1df3b605ffe17bd498e167f340434344
+      spriteID: 8e82557ddb04f42438cb92450e5918a7
       internalID: 11310349311348961
       vertices: []
       indices: 
@@ -369,18 +369,18 @@ TextureImporter:
       name: blower_11
       rect:
         serializedVersion: 2
-        x: 101
-        y: 50
-        width: 26
-        height: 42
-      alignment: 9
-      pivot: {x: 0.41689184, y: 0.1173894}
+        x: 96
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e7e971082bf40049aaf3bf4b60618ab
+      spriteID: 4cf7677d7a75b824f8f150b9443c8a15
       internalID: 6082417276964357315
       vertices: []
       indices: 
@@ -390,18 +390,18 @@ TextureImporter:
       name: blower_12
       rect:
         serializedVersion: 2
-        x: 5
-        y: 6
-        width: 22
-        height: 38
-      alignment: 9
-      pivot: {x: 0.5031442, y: -0.001987658}
+        x: 0
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d655e827879c84049bd9723dc456539c
+      spriteID: ba2e85e1655a98943b891e0ea9edd1cf
       internalID: -8178984288227965537
       vertices: []
       indices: 
@@ -411,18 +411,18 @@ TextureImporter:
       name: blower_13
       rect:
         serializedVersion: 2
-        x: 34
-        y: 6
-        width: 25
-        height: 38
-      alignment: 9
-      pivot: {x: 0.53157747, y: 0.037019666}
+        x: 32
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f5a527e01bdf544b18b1a81f88ae37
+      spriteID: 7bb9eed3757a36c4bacc2337f822333e
       internalID: -1383377068260378097
       vertices: []
       indices: 
@@ -432,18 +432,18 @@ TextureImporter:
       name: blower_14
       rect:
         serializedVersion: 2
-        x: 69
-        y: 6
-        width: 24
-        height: 42
-      alignment: 9
-      pivot: {x: 0.47691217, y: 0.018449966}
+        x: 64
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e987e70f4e15e9c4eb1ff46d05626181
+      spriteID: ae937caac6e986649bbca900367aa176
       internalID: 7970023868957467720
       vertices: []
       indices: 
@@ -453,18 +453,18 @@ TextureImporter:
       name: blower_15
       rect:
         serializedVersion: 2
-        x: 97
-        y: 2
-        width: 26
-        height: 42
-      alignment: 9
-      pivot: {x: 0.5584708, y: 0.11129407}
+        x: 96
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 525308adaa998f840b6e9fe093dd7f7d
+      spriteID: 03fe624ce5571584fa7c963e612f3a66
       internalID: 3119244683230558825
       vertices: []
       indices: 

@@ -1525,6 +1525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   towerActive: []
+  towerTemp: {fileID: 0}
 --- !u!81 &1076462437
 AudioListener:
   m_ObjectHideFlags: 0

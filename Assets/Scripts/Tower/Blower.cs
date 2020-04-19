@@ -68,7 +68,6 @@ public class Blower : MonoBehaviour
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
-            mousePosition.y -= 0.4f;
             transform.position = mousePosition;
         }
     }
