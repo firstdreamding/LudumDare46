@@ -11,15 +11,23 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float cooldown;
     public Scythe scythePrefab;
+    public int gold = 0;
 
     Animator anim;
+    SpriteRenderer spr;
+    HUD hud;
     private Item item;
     private float nextActive = 0;
     int direction = 2;
+    private float velocityX = 0;
+    private float velocityY = 0;
+    public Sprite[] idles;
     void Start()
     {
         item = Item.MAGIC;
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
+        hud = GameObject.Find("HUD").GetComponent<HUD>();
     }
     // Update is called once per frame
     void Update()
@@ -37,33 +45,49 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            velocityY = 0;
+            velocityX = 0;
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Ruin" && Input.GetKey(KeyCode.E))
         {
-            collision.GetComponent<Ruins>().Use();
+            string drop = collision.GetComponent<Ruins>().Use();
+            if (drop == "GOLD")
+            {
+                gold += 5;
+                hud.setGold(gold);
+            }
         }
     }
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        float speedX = Mathf.Abs(moveHorizontal);
-        float speedY = Mathf.Abs(moveVertical);
-        direction = 2;
-        if (speedX > speedY)
+        Vector2 movement = new Vector2(velocityX, velocityY);
+        transform.Translate(speed * movement);
+        if (velocityX == 0 && velocityY == 0)
         {
-            if (moveHorizontal > 0) { direction = 1; }
-            else if (moveHorizontal < 0) { direction = 3; }
+            anim.SetBool("isWalking", false);
         }
         else
         {
-            if (moveVertical > 0) { direction = 0; }
-            else if (moveVertical < 0) { direction = 2; }
+            if (velocityY < velocityX)
+            {
+                if (velocityY > -velocityX) { direction = 1; } else { direction = 2; }
+            }
+            else
+            {
+                if (velocityY > -velocityX) { direction = 0; } else { direction = 3; }
+            }
+            anim.SetFloat("velocityX", velocityX);
+            anim.SetFloat("velocityY", velocityY);
+            anim.SetBool("isWalking", true);
         }
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        transform.Translate(speed * movement);
-        anim.SetFloat("speed", speedX + speedY);
-        anim.SetInteger("direction", direction);
+        velocityX = Input.GetAxis("Horizontal");
+        velocityY = Input.GetAxis("Vertical");
     }
 }
