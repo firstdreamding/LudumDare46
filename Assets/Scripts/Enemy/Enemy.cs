@@ -6,9 +6,6 @@ using System;
 
 public class Enemy : MonoBehaviour
 {
-
-
-    public float speed;
     public GameObject deathPrefab;
 
     //don't hardcode these, defined in functions
@@ -35,7 +32,7 @@ public class Enemy : MonoBehaviour
         switch (enemyStats.state)
         {
             case EnemyStats.State.OFFPATH:
-                transform.position = Vector3.MoveTowards(transform.position, enemyStats.resetPoint, speed);
+                transform.position = Vector3.MoveTowards(transform.position, enemyStats.resetPoint, enemyStats.speed);
                 if (Vector3.Distance(transform.position, enemyStats.resetPoint) < 0.001f)
                 {
                     enemyStats.state = EnemyStats.State.ONPATH;
@@ -59,7 +56,7 @@ public class Enemy : MonoBehaviour
     {
         if (enemyStats.toNext.Count > 0)
         {
-            transform.position = Vector2.MoveTowards(transform.position, enemyStats.toNext[0], speed);
+            transform.position = Vector2.MoveTowards(transform.position, enemyStats.toNext[0], enemyStats.speed);
             if (transform.position.x == enemyStats.toNext[0].x && transform.position.y == enemyStats.toNext[0].y)
             {
                 enemyStats.toNext.Remove(enemyStats.toNext[0]);
@@ -74,21 +71,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        enemyStats.OnTrigger(collision);
+    }
 
-        if (collision.tag == "Projectile")
-        {
-            enemyStats.hp = (int)(enemyStats.hp - collision.GetComponent<Projectile>().GetDamage());
-        }
-        else if (collision.tag == "PathTurn")
-        {
-            Vector2 tempVec = collision.gameObject.GetComponent<TurnTile>().targetMove;
-            enemyStats.toNext.Add(tempVec);
-        }
-        else if (collision.tag == "Pharaoh")
-        {
-            Debug.Log("Oh no, he was hit");
-            Destroy(gameObject);
-        }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        enemyStats.OnTriggerEx(collision);
     }
 
     public void CompletedDeath()

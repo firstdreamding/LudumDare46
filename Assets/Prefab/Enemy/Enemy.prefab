@@ -165,10 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8696480811d40418b9e933c77fd1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.02
   deathPrefab: {fileID: 5452568145918339602, guid: 7803687ab22079f4c93d7d17af042605,
     type: 3}
-  toNext: []
 --- !u!114 &7808758266358741944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,5 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7e003cbae73184da06efdb4e0a25b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetPoint: {x: 0, y: 0}
+  knockbackPoint: {x: 0, y: 0}
+  knockbackSpeed: 0
+  toNext: []
   state: 0
   hp: 10
+  speed: 0
+  maxSpeed: 0.02
+  knock: 0

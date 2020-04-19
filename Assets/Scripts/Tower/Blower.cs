@@ -17,6 +17,7 @@ public class Blower : MonoBehaviour
     public float damage;
     public int maxAmmo;
     public int inCollision;
+    public GameObject prefab;
 
     List<GameObject> inRange;
     private State state;
@@ -27,6 +28,7 @@ public class Blower : MonoBehaviour
     private GameObject highlight;
     private Animator anim;
     private Vector3 mousePosition;
+    private TowerStats ts;
 
     void Start()
     {
@@ -42,6 +44,7 @@ public class Blower : MonoBehaviour
         highlight.GetComponent<SpriteRenderer>().color = canBuild;
 
         state = State.SELECT;
+        ts = GetComponent<TowerStats>();
     }
 
     // Update is called once per frame
@@ -51,12 +54,17 @@ public class Blower : MonoBehaviour
         {
             if (lastShoot + coolDown < Time.time)
             {
-                if (currentAmmo > 0 && inRange.Count > 0)
+                if (currentAmmo > 0)
                 {
-                    lastShoot = Time.time;
-                    Debug.Log("SHOOT");
-                    anim.SetTrigger("blow");
-                    currentAmmo--;
+                    if (inRange.Count > 0)
+                    {
+                        lastShoot = Time.time;
+                        Debug.Log("SHOOT");
+                        anim.SetTrigger("blow");
+                        GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
+                        temp.GetComponent<WindProjectile>().SetValues(Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir)) * new Vector3(0, 1), damage);
+                        currentAmmo--;
+                    }
                 }
                 else
                 {
@@ -80,6 +88,7 @@ public class Blower : MonoBehaviour
 
             highlight.SetActive(false);
             state = State.BUILT;
+            MainScript.MSCRIPT.state = MainScript.State.GAME;
         }
         else
         {
@@ -98,7 +107,7 @@ public class Blower : MonoBehaviour
         if (state != State.SELECT)
         {
             information.SetActive(true);
-            information.GetComponent<Information>().SetInfo(damage, coolDown);
+            information.GetComponent<Information>().SetInfo(damage, coolDown, ts);
 
             Reload();
         }

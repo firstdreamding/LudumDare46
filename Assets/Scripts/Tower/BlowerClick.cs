@@ -19,7 +19,6 @@ public class BlowerClick : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.tag == "Tower" || collision.tag == "Path" || collision.tag == "PathTurn")
         {
             script.inCollision++;

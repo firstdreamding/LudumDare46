@@ -30,6 +30,7 @@ public class RockThrower : MonoBehaviour
     private GameObject highlight;
     private Animator anim;
     private bool shooting;
+    private TowerStats ts;
 
     private Vector3 mousePosition;
 
@@ -49,6 +50,7 @@ public class RockThrower : MonoBehaviour
         state = State.SELECT;
         anim = transform.Find("Content").GetComponent<Animator>();
         shooting = false;
+        ts = GetComponent<TowerStats>();
     }
 
     // Update is called once per frame
@@ -104,6 +106,7 @@ public class RockThrower : MonoBehaviour
                 Click();
             }
         }
+        //Debug.Log(ts.dir);
     }
 
     public void SetDown()
@@ -133,7 +136,7 @@ public class RockThrower : MonoBehaviour
         if (state != State.SELECT)
         {
             information.SetActive(true);
-            information.GetComponent<Information>().SetInfo(damage, coolDown);
+            information.GetComponent<Information>().SetInfo(damage, coolDown, ts);
 
             Reload();
         } else
