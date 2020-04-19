@@ -4,17 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - Enemy
   - Ruin
-=======
-  - Projectile
-  - Tower
-  - Path
-  - PathTurn
+  - Wall
   - Enemy
-  - Pharaoh
->>>>>>> 3f21cb6ab71dd89b7cff922b572f314512f81f5b
   layers:
   - Default
   - TransparentFX
