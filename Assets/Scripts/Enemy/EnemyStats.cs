@@ -20,7 +20,6 @@ public class EnemyStats : MonoBehaviour
     public int hp;
     public float speed;
     public float maxSpeed;
-    public GameObject wind;
 
     public void SetUp(int hp)
     {
@@ -40,12 +39,12 @@ public class EnemyStats : MonoBehaviour
         anim.SetFloat("SpeedY", (firstPoint.y - transform.position.y));
         speed = maxSpeed;
     }
-    public void Attacked(int damage, Vector3 attackerPos, float knockbackConstant)
+    public void Attacked(int damage, Vector3 attackerPos, float knockbackConstant, float knockbackSpeed)
     {
         hp -= damage;
         Vector3 dispalcement = knockbackConstant * (transform.position - attackerPos).normalized;
         knockbackPoint = transform.position + dispalcement;
-        knockbackSpeed = 0.5f * knockbackConstant;
+        this.knockbackSpeed = knockbackSpeed * knockbackConstant;
         resetPoint = transform.position;
         state = State.KNOCKBACK;
     }
@@ -56,10 +55,9 @@ public class EnemyStats : MonoBehaviour
         {
             hp = (int)(hp - collision.GetComponent<Projectile>().GetDamage());
         }
-        else if (collision.tag == "WindProjectile")
+        else if (collision.tag == "WindProjectile" && collision.GetComponent<WindProjectile>().canHit(gameObject.GetInstanceID()))
         {
-            //Attacked(0, toNext[0], 1);
-            wind = collision.gameObject;
+            Attacked(0, collision.transform.position, 0.25f, 0.1f);
         }
         else if (collision.tag == "PathTurn")
         {
@@ -72,24 +70,16 @@ public class EnemyStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void OnTriggerEx(Collider2D other)
+    public void OnTriggerEx(Collider2D collider)
     {
-        if (other.tag == "WindProjectile")
-        {
-            wind = null;
-        }
     }
-
     private void FixedUpdate()
     {
-        if (wind != null)
-        {
-            speed -= 0.002f;
-        } else if (speed != maxSpeed)
+        if (speed != maxSpeed)
         {
             speed += 0.002f;
-        } else if (speed > 0)
+        }
+        else if (speed > 0)
         {
             speed = maxSpeed;
         }

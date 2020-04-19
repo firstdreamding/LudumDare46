@@ -59,11 +59,8 @@ public class Blower : MonoBehaviour
                     if (inRange.Count > 0)
                     {
                         lastShoot = Time.time;
-                        Debug.Log("SHOOT");
                         anim.SetTrigger("blow");
-                        GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                        temp.GetComponent<WindProjectile>().SetValues(Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir)) * new Vector3(0, 1), damage);
-                        currentAmmo--;
+                        Invoke("spawnProjectile", 0.15f);
                     }
                 }
                 else
@@ -79,7 +76,13 @@ public class Blower : MonoBehaviour
             transform.position = mousePosition;
         }
     }
-
+    void spawnProjectile()
+    {
+        WindProjectile temp = Instantiate(prefab, transform.position, Quaternion.identity).GetComponent<WindProjectile>();
+        temp.SetValues(Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir)) * new Vector3(0, 1), damage);
+        temp.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir));
+        currentAmmo--;
+    }
     public void SetDown()
     {
         if (inCollision == 0)
