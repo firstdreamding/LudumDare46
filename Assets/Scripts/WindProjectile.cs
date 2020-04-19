@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +10,11 @@ public class WindProjectile : MonoBehaviour
     private Vector3 normalizedDirection;
     private float step;
     private float damage;
-
+    private HashSet<int> enemiesHit;
     void Start()
     {
         step = speed;
+        enemiesHit = new HashSet<int>();
         Destroy(gameObject, timeLast);
     }
 
@@ -30,5 +32,12 @@ public class WindProjectile : MonoBehaviour
     public float GetDamage()
     {
         return damage;
+    }
+
+    internal bool canHit(int v)
+    {
+        if (enemiesHit.Contains(v)) return false;
+        enemiesHit.Add(v);
+        return true;
     }
 }
