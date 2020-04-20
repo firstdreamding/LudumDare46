@@ -123,8 +123,7 @@ public class Blower : MonoBehaviour
 
                 Reload();
             }
-        }
-        else
+        } else if (MainScript.MSCRIPT.state != MainScript.State.MENU)
         {
             SetDown();
         }

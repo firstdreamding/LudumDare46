@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - WindProjectile
   - Spear
+  - Wall
+  - Magic
   layers:
   - Default
   - TransparentFX

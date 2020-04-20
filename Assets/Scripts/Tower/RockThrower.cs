@@ -105,14 +105,6 @@ public class RockThrower : MonoBehaviour
             mousePosition.z = transform.position.z;
             transform.position = mousePosition;
         }
-
-        if (MainScript.MSCRIPT.state == MainScript.State.BUILD)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Click();
-            }
-        }
         //Debug.Log(ts.dir);
     }
 
@@ -148,7 +140,8 @@ public class RockThrower : MonoBehaviour
 
                 Reload();
             }
-        } else
+        }
+        else if (MainScript.MSCRIPT.state != MainScript.State.MENU)
         {
             SetDown();
         }
