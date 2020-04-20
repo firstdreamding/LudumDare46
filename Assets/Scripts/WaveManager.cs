@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         wave = 0;
-        waveDelay = 10f;
+        waveDelay = 2f;
         enemiesToSpawn = new int[enemies.Length];
         nextWave();
     }
@@ -36,7 +36,7 @@ public class WaveManager : MonoBehaviour
         {
             enemiesToSpawn[i] = spawnRates[i].y * (wave / spawnRates[i].x);
         }
-        enemiesToSpawn[0] += 3;
+        enemiesToSpawn[0] += 1;
         Invoke("startWave", waveDelay);
     }
     private void startWave()
