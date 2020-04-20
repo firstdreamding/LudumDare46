@@ -35,7 +35,7 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
         Debug.Log(transform.position);
 
         target = transform.position;
-        target.y = transform.position.y + 50;
+        target.y = transform.position.y + Screen.height/13;
         og = transform.position;
 
         first = transform.position;
@@ -88,7 +88,7 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
                     transform.position = down;
                     if (wait + 0.3f < Time.time)
                     {
-                        Instantiate(prefab);
+                        MainScript.MSCRIPT.towerTemp = Instantiate(prefab);
                         GetComponentInParent<BuildManager>().Exit();
                         state = finish.done;
                     }
