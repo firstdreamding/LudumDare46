@@ -32,6 +32,8 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
     // Start is called before the first frame update
     void Awake()
     {
+        Debug.Log(transform.position);
+
         target = transform.position;
         target.y = transform.position.y + 50;
         og = transform.position;
