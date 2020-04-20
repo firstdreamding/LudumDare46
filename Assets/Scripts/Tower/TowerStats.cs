@@ -12,11 +12,6 @@ public class TowerStats : MonoBehaviour
     public float coolDown;
     public float damage;
 
-    public string hireName;
-    public int wage;
-    public Sprite icon;
-    public string blurb;
-
     public void UpdateDir()
     {
         GetComponent<Animator>().SetFloat("direction", dir);
