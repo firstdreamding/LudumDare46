@@ -33,7 +33,7 @@ public class RockThrower : MonoBehaviour
 
     private Vector3 mousePosition;
 
-    void Start()
+    void Awake()
     {
         inRange = new List<GameObject>();
         lastShoot = Time.time;
@@ -141,7 +141,7 @@ public class RockThrower : MonoBehaviour
     {
         if (state != State.SELECT)
         {
-            if (!ts.CheckIfUIHovered())
+            if (!ts.CheckIfUIHovered() && MainScript.MSCRIPT.state != MainScript.State.BUILD)
             {
                 information.SetActive(true);
                 information.GetComponent<Information>().SetInfo(ts.damage, ts.coolDown, ts, gameObject);

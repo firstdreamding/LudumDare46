@@ -6,7 +6,7 @@ public class BlowerClick : MonoBehaviour
 {
     Blower script;
 
-    private void Start()
+    private void Awake()
     {
         script = transform.parent.GetComponent<Blower>();
     }
