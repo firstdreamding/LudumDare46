@@ -35,7 +35,7 @@ public class WaveManager : MonoBehaviour
         {
             enemiesToSpawn[i] = spawnRates[i].y * (wave / spawnRates[i].x);
         }
-        enemiesToSpawn[0]++;
+        enemiesToSpawn[0]+=3;
         Invoke("startWave", waveDelay);
     }
     private void startWave()

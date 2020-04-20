@@ -46,7 +46,7 @@ public class SummonTile : MonoBehaviour
                 EnemyStats spawned = Instantiate(wm.enemies[toSpawn], new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity).GetComponent<EnemyStats>();
                 spawned.Init(targetMove);
                 float nextWidth = 0.8f * gameObject.GetComponent<SpriteRenderer>().size.x;
-                spawned.transform.Translate(nextWidth * (Random.value - 0.5f), nextWidth * (Random.value - 0.5f), 0);
+                spawned.transform.Translate(nextWidth * (Random.value - 0.5f), nextWidth * (Random.value - 0.5f), -1);
             }
         }
     }

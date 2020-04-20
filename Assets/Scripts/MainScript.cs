@@ -33,18 +33,20 @@ public class MainScript : MonoBehaviour
         state = State.GAME;
         towerActive = new List<GameObject>();
     }
-
+    private Vector3 offSet = new Vector3(0, 0, -10);
     // Update is called once per frame
     void Update()
     {
         if (state == State.GAME)
         {
+            transform.position = PlayerScript.player.transform.position + offSet;
             if (Input.GetKey(KeyCode.B))
             {
                 buyMenu.SetActive(true);
                 state = State.MENU;
             }
-        } else if (state == State.BUILD)
+        }
+        else if (state == State.BUILD)
         {
             if (Input.GetKey(KeyCode.Escape) && towerTemp != null)
             {
