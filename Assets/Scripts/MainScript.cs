@@ -47,12 +47,18 @@ public class MainScript : MonoBehaviour
                 buyMenu.SetActive(true);
                 state = State.MENU;
             }
+
+            if (heath <= 0)
+            {
+                GameObject.Find("UICanvas").transform.Find("GameOver").gameObject.SetActive(true);
+            }
         }
         else if (state == State.BUILD)
         {
             if (Input.GetKey(KeyCode.Escape) && towerTemp != null)
             {
                 Destroy(towerTemp);
+                state = State.GAME;
             }
         }
     }
