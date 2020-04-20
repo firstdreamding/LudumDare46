@@ -19,12 +19,12 @@ public class PlayerScript : MonoBehaviour
 
     Animator anim;
     SpriteRenderer spr;
-    private Item item;
-    Dictionary<Item, int> inventory = new Dictionary<Item, int>();
+    private Dictionary<Item, int> inventory = new Dictionary<Item, int>();
     private float nextActive = 0;
     int direction = 2;
     private float velocityX = 0;
     private float velocityY = 0;
+    private int selected = 0;
     public Sprite[] idles;
     private void Awake()
     {
@@ -36,13 +36,21 @@ public class PlayerScript : MonoBehaviour
     }
     void Start()
     {
-        item = Item.SCYTHE;
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         HUD.hud.setGold(gold);
+        foreach (Item i in System.Enum.GetValues(typeof(Item)))
+        {
+            inventory[i] = 0;
+        }
         inventory[Item.SCYTHE] = 1;
-        inventory[Item.EYE] = 0;
-        inventory[Item.ANKH] = 0;
+        inventory[Item.EYE] = 3;
+        inventory[Item.ANKH] = 3;
+        UpdateInv();
+    }
+    void UpdateInv()
+    {
+        HUD.hud.displayInv(inventory);
     }
     // Update is called once per frame
     void Update()
@@ -50,14 +58,43 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && Time.time > nextActive)
         {
             nextActive = Time.time + cooldown;
-            switch (item)
+            Item selectedItem = HUD.hud.items[selected];
+            if (inventory[selectedItem] < 1) { return; }
+            switch (selectedItem)
             {
                 case Item.SCYTHE:
                     Scythe clone = Instantiate(scythePrefab);
                     clone.transform.parent = gameObject.transform;
                     clone.doTransform(direction);
                     break;
+                case Item.EYE:
+                    inventory[selectedItem]--;
+                    break;
+                case Item.ANKH:
+                    inventory[selectedItem]--;
+                    break;
             }
+            UpdateInv();
+        }
+        else if (Input.GetKey(KeyCode.Alpha1))
+        {
+            selected = 0;
+            HUD.hud.setPointer(selected);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            selected = 1;
+            HUD.hud.setPointer(selected);
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            selected = 2;
+            HUD.hud.setPointer(selected);
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            selected = 3;
+            HUD.hud.setPointer(selected);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -75,8 +112,17 @@ public class PlayerScript : MonoBehaviour
             Item drop = collision.GetComponent<Ruins>().Use();
             if (drop == Item.GOLD)
             {
-                incGold(5);
+                incGold(30);
             }
+            else if (drop == Item.EYE)
+            {
+                inventory[drop]++;
+            }
+            else if (drop == Item.ANKH)
+            {
+                inventory[drop]++;
+            }
+            UpdateInv();
         }
     }
     public void incGold(int count)
