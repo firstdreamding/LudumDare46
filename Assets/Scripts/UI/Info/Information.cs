@@ -28,25 +28,38 @@ public class Information : MonoBehaviour
     public void SetInfo(float damage, float firerate, TowerStats ts, GameObject go)
     {
         Vector2 dvector = damageTrans.sizeDelta;
-        dvector.x = 200 * (damage / 6);
+        dvector.x = 60 * (damage / 6);
         damageTrans.sizeDelta = dvector;
 
         Vector2 fvector = fireTrans.sizeDelta;
-        fvector.x = 200 * (0.3f / firerate);
+        fvector.x = 60 * (0.3f / firerate);
         fireTrans.sizeDelta = fvector;
-
-        this.ts = ts;
-        transform.Find("Dropdown").GetComponent<Dropdown>().value = ts.dir;
 
         if (!ts.dirMatter)
         {
             transform.Find("Dropdown").gameObject.SetActive(false);
-        } else
+        }
+        else
         {
             transform.Find("Dropdown").gameObject.SetActive(true);
+            this.ts = ts;
+            transform.Find("Dropdown").GetComponent<Dropdown>().value = ts.dir;
         }
 
+        this.ts = ts;
         currentGameObject = go;
+        UpgradeSetup();
+    }
+
+    private void UpgradeSetup()
+    {
+        if (ts.canUpgrade)
+        {
+            transform.Find("Upgrade").gameObject.SetActive(true);
+        } else
+        {
+            transform.Find("Upgrade").gameObject.SetActive(false);
+        }
     }
 
     public void Close()

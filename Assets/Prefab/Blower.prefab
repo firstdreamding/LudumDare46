@@ -165,8 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42691862fcc6104cb96d9fc96f46a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: 0
+  dir: 2
   dirMatter: 1
+  canUpgrade: 0
+  upgradeTower: {fileID: 0}
 --- !u!1 &6047913990939935117
 GameObject:
   m_ObjectHideFlags: 0
