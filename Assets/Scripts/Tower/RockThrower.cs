@@ -70,7 +70,7 @@ public class RockThrower : MonoBehaviour
                             {
                                 lastShoot = Time.time;
                                 startShoot = Time.time;
-                                anim.SetBool("IsThrowing", true);
+                                anim.SetTrigger("IsThrowing");
                                 anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
                                 anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
                                 currentAmmo--;
@@ -134,10 +134,13 @@ public class RockThrower : MonoBehaviour
     {
         if (state != State.SELECT)
         {
-            information.SetActive(true);
-            information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
+            if (!ts.CheckIfUIHovered())
+            {
+                information.SetActive(true);
+                information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
 
-            Reload();
+                Reload();
+            }
         } else
         {
             SetDown();

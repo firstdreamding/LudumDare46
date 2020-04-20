@@ -109,10 +109,13 @@ public class Blower : MonoBehaviour
     {
         if (state != State.SELECT)
         {
-            information.SetActive(true);
-            information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
+            if (!ts.CheckIfUIHovered())
+            {
+                information.SetActive(true);
+                information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
 
-            Reload();
+                Reload();
+            }
         }
         else
         {
