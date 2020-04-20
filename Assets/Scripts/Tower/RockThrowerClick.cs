@@ -40,9 +40,4 @@ public class RockThrowerClick : MonoBehaviour
             script.CollisionUp();
         }
     }
-
-    public void FinishThrowAnim()
-    {
-        anim.SetBool("IsThrowing", false);
-    }
 }

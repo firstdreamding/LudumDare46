@@ -14,11 +14,10 @@ public class RockThrower : MonoBehaviour
     public GameObject prefab;
     public Color canBuild;
     public Color cannotBuild;
-    public float coolDown;
-    public float damage;
     public int maxAmmo;
     public int inCollision;
     public float delay;
+    public bool isUpgrade;
 
     List<GameObject> inRange;
     private State state;
@@ -47,7 +46,15 @@ public class RockThrower : MonoBehaviour
         highlight = transform.Find("Highlight").gameObject;
         highlight.GetComponent<SpriteRenderer>().color = canBuild;
 
-        state = State.SELECT;
+        if (isUpgrade)
+        {
+            state = State.BUILT;
+        }
+        else
+        {
+            state = State.SELECT;
+        }
+
         anim = transform.Find("Content").GetComponent<Animator>();
         shooting = false;
         ts = GetComponent<TowerStats>();
@@ -60,7 +67,7 @@ public class RockThrower : MonoBehaviour
         {
             if (!shooting)
             {
-                if (lastShoot + coolDown < Time.time)
+                if (lastShoot + ts.coolDown < Time.time)
                 {
                     if (currentAmmo > 0)
                     {
@@ -88,7 +95,7 @@ public class RockThrower : MonoBehaviour
                 if (startShoot + delay < Time.time && inRange.Count > 0)
                 {
                     GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                    temp.GetComponent<Projectile>().SetValues(inRange[0], damage);
+                    temp.GetComponent<Projectile>().SetValues(inRange[0], ts.damage);
                     shooting = false;
                 }
             }
@@ -137,7 +144,7 @@ public class RockThrower : MonoBehaviour
             if (!ts.CheckIfUIHovered())
             {
                 information.SetActive(true);
-                information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
+                information.GetComponent<Information>().SetInfo(ts.damage, ts.coolDown, ts, gameObject);
 
                 Reload();
             }

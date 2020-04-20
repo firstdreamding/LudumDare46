@@ -9,7 +9,7 @@ public class Information : MonoBehaviour
 
     private RectTransform damageTrans;
     private RectTransform fireTrans;
-    private GameObject currentGameObject;
+    public GameObject currentGameObject;
     public TowerStats ts;
 
     // Start is called before the first frame update
