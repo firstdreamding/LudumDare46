@@ -5906,10 +5906,12 @@ MonoBehaviour:
   - {fileID: 6150287724081406818, guid: 6672b41e22df4814e8632332da68cf4c, type: 3}
   - {fileID: 4223086385617701015, guid: ff4b3ce5a505b08408350a17eed146d5, type: 3}
   - {fileID: 5232211214402903664, guid: 76081dcce2e0b244d90cad4f17309f90, type: 3}
+  - {fileID: 9064172699076534876, guid: 909a6085753764c4fad5c458607ae322, type: 3}
   spawnRates:
-  - {x: 1, y: 0}
-  - {x: 1, y: 0}
-  - {x: 1, y: 0}
+  - {x: 5, y: 2}
+  - {x: 4, y: 1}
+  - {x: 5, y: 1}
+  - {x: 6, y: 1}
   inWave: 0
   enemiesToSpawn: 
   waveDelay: 0
@@ -10678,14 +10680,14 @@ RectTransform:
   m_GameObject: {fileID: 726999211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6243, y: 1.6243, z: 1.6243}
   m_Children: []
   m_Father: {fileID: 25258308}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482.1001, y: 166.30005}
+  m_AnchoredPosition: {x: -434, y: 356}
   m_SizeDelta: {x: 180, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726999213
@@ -12666,7 +12668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -388, y: -185}
+  m_AnchoredPosition: {x: -460, y: -420}
   m_SizeDelta: {x: 332.6, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &882033886
@@ -12690,7 +12692,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6b70815e903fc7941b8a93e3f66210d9, type: 3}
-    m_FontSize: 20
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -17252,7 +17254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -730, y: -185}
+  m_AnchoredPosition: {x: -795, y: -422}
   m_SizeDelta: {x: 332.6, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1269297343
@@ -17276,11 +17278,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6b70815e903fc7941b8a93e3f66210d9, type: 3}
-    m_FontSize: 20
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -19776,11 +19778,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b1b3454d9c2c549a92f2c0cc49dccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.05
   cooldown: 1
   scythePrefab: {fileID: 2634230951584272010, guid: a873f219514610043843f25149d21347,
     type: 3}
-  gold: 0
+  gold: 10
   idles: []
 --- !u!212 &1458360778
 SpriteRenderer:
@@ -24290,7 +24292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -129.66864, y: -214.68747}
+  m_AnchoredPosition: {x: -145, y: -203}
   m_SizeDelta: {x: 100, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730422193

@@ -32,6 +32,10 @@ public class Enemy : MonoBehaviour
         {
             case EnemyStats.State.OFFPATH:
                 transform.position = Vector3.MoveTowards(transform.position, enemyStats.resetPoint, enemyStats.speed);
+                Vector2 dr = (enemyStats.resetPoint - (Vector2)transform.position).normalized;
+                Debug.Log(dr);
+                anim.SetFloat("SpeedX", dr.x);
+                anim.SetFloat("SpeedY", dr.y);
                 if (Vector3.Distance(transform.position, enemyStats.resetPoint) < 0.001f)
                 {
                     enemyStats.state = EnemyStats.State.ONPATH;

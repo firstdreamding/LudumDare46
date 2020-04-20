@@ -14,9 +14,38 @@ public class TowerStats : MonoBehaviour
 
     public string hireName;
     public int wage;
+    public int tolerance;
+    private int roundsNotPayed;
+    private int moneyOwed;
     public Sprite icon;
     public string blurb;
 
+    void Start()
+    {
+        moneyOwed = 0;
+        roundsNotPayed = 0;
+    }
+    public void Pay()
+    {
+        moneyOwed += wage;
+        if (moneyOwed > PlayerScript.player.gold)
+        {
+            roundsNotPayed++;
+            transform.Find("NeedMoney").gameObject.SetActive(true);
+            if (roundsNotPayed > tolerance)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            transform.Find("NeedMoney").gameObject.SetActive(false);
+            roundsNotPayed = 0;
+            moneyOwed = 0;
+            PlayerScript.player.gold -= moneyOwed;
+        }
+
+    }
     public void UpdateDir()
     {
         GetComponent<Animator>().SetFloat("direction", dir);

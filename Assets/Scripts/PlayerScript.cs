@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float cooldown;
     public Scythe scythePrefab;
-    public int gold = 0;
+    public int gold;
 
     Animator anim;
     SpriteRenderer spr;
@@ -35,6 +35,7 @@ public class PlayerScript : MonoBehaviour
         item = Item.MAGIC;
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
+        HUD.hud.setGold(gold);
     }
     // Update is called once per frame
     void Update()
