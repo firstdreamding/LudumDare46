@@ -11,6 +11,7 @@ TagManager:
   - PathTurn
   - Enemy
   - WindProjectile
+  - Spear
   layers:
   - Default
   - TransparentFX
