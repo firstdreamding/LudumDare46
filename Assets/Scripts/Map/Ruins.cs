@@ -16,10 +16,10 @@ public class Ruins : MonoBehaviour
     private SpriteRenderer spr;
     private float spawnRate = 1.00f;
     private WaitForSeconds delay = new WaitForSeconds(2);
-    static string[] drops = { "GOLD", "SCRAP", "SCYTHE" };
+    static Item[] drops = { Item.GOLD, Item.EYE, Item.ANKH };
     static float[] probs = { 0.5f, 0.75f, 1.01f };
 
-    private string selectedDrop = "EMPTY";
+    private Item selectedDrop = Item.EMPTY;
     void Start()
     {
         state = State.EMPTY;
@@ -27,14 +27,14 @@ public class Ruins : MonoBehaviour
         spr.sprite = emptyRuin;
         StartCoroutine("Spawner");
     }
-    public string Use()
+    public Item Use()
     {
-        string returnval = selectedDrop;
+        Item returnval = selectedDrop;
         if (state == State.FULL)
         {
             spr.sprite = emptyRuin;
             state = State.EMPTY;
-            selectedDrop = "EMPTY";
+            selectedDrop = Item.EMPTY;
         }
         return returnval;
     }

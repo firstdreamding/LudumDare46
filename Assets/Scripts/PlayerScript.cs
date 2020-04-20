@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-enum Item
+public enum Item
 {
-    BOW,
-    MAGIC
+    EMPTY,
+    SCYTHE,
+    GOLD,
+    EYE,
+    ANKH,
 }
 public class PlayerScript : MonoBehaviour
 {
@@ -17,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     Animator anim;
     SpriteRenderer spr;
     private Item item;
+    Dictionary<Item, int> inventory = new Dictionary<Item, int>();
     private float nextActive = 0;
     int direction = 2;
     private float velocityX = 0;
@@ -32,10 +36,13 @@ public class PlayerScript : MonoBehaviour
     }
     void Start()
     {
-        item = Item.MAGIC;
+        item = Item.SCYTHE;
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         HUD.hud.setGold(gold);
+        inventory[Item.SCYTHE] = 1;
+        inventory[Item.EYE] = 0;
+        inventory[Item.ANKH] = 0;
     }
     // Update is called once per frame
     void Update()
@@ -45,7 +52,7 @@ public class PlayerScript : MonoBehaviour
             nextActive = Time.time + cooldown;
             switch (item)
             {
-                case Item.MAGIC:
+                case Item.SCYTHE:
                     Scythe clone = Instantiate(scythePrefab);
                     clone.transform.parent = gameObject.transform;
                     clone.doTransform(direction);
@@ -65,11 +72,10 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.tag == "Ruin" && Input.GetKey(KeyCode.E))
         {
-            string drop = collision.GetComponent<Ruins>().Use();
-            if (drop == "GOLD")
+            Item drop = collision.GetComponent<Ruins>().Use();
+            if (drop == Item.GOLD)
             {
-                gold += 5;
-                HUD.hud.setGold(gold);
+                incGold(5);
             }
         }
     }

@@ -45,7 +45,7 @@ public class EnemyStats : MonoBehaviour
     }
 
     private HashSet<int> cornersmet = new HashSet<int>();
-    public void OnTrigger(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Projectile")
         {
@@ -72,12 +72,66 @@ public class EnemyStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void OnTriggerEx(Collider2D collider)
-    {
-    }
+
     public void CompletedDeath()
     {
         Instantiate(deathPrefab, new Vector3(transform.position.x, transform.position.y, -4), Quaternion.identity);
         Destroy(gameObject);
+    }
+    Animator anim;
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (hp <= 0 && state != EnemyStats.State.DEAD)
+        {
+            state = EnemyStats.State.DEAD;
+            anim.SetBool("Dead", true);
+            GetComponent<BoxCollider2D>().enabled = false;
+            PlayerScript.player.incGold(goldDrop);
+        }
+    }
+    private void FixedUpdate()
+    {
+        switch (state)
+        {
+            case State.OFFPATH:
+                transform.position = Vector3.MoveTowards(transform.position, resetPoint, speed);
+                Vector2 dr = (resetPoint - (Vector2)transform.position).normalized;
+                anim.SetFloat("SpeedX", dr.x);
+                anim.SetFloat("SpeedY", dr.y);
+                if (Vector3.Distance(transform.position, resetPoint) < 0.001f)
+                {
+                    state = State.ONPATH;
+                }
+                break;
+            case State.ONPATH:
+                OnPath();
+                break;
+            case State.KNOCKBACK:
+                transform.position = Vector3.MoveTowards(transform.position, knockbackPoint, knockbackSpeed);
+                if (Vector3.Distance(transform.position, knockbackPoint) < 0.001f)
+                {
+                    state = State.OFFPATH;
+                }
+                break;
+        }
+    }
+
+    private void OnPath()
+    {
+        if (toNext.Count > 0)
+        {
+            anim.SetFloat("SpeedX", toNext[0].x - transform.position.x);
+            anim.SetFloat("SpeedY", toNext[0].y - transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, toNext[0], speed);
+            if (Vector2.Distance(transform.position, toNext[0]) < 0.001f)
+            {
+                toNext.Remove(toNext[0]);
+            }
+        }
     }
 }
