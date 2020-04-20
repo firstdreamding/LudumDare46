@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 897391108}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.81333333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2285,7 +2285,10 @@ MonoBehaviour:
   - {fileID: 6150287724081406818, guid: 6672b41e22df4814e8632332da68cf4c, type: 3}
   - {fileID: 4223086385617701015, guid: ff4b3ce5a505b08408350a17eed146d5, type: 3}
   - {fileID: 5232211214402903664, guid: 76081dcce2e0b244d90cad4f17309f90, type: 3}
-  waveDataText: {fileID: 4900000, guid: 64ea71afee628854789f8539211c31b7, type: 3}
+  spawnRates:
+  - {x: 3, y: 1}
+  - {x: 6, y: 1}
+  - {x: 9, y: 1}
   inWave: 0
   enemiesToSpawn: 
   waveDelay: 5
