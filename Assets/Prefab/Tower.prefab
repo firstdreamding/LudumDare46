@@ -86,6 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: 0
   dirMatter: 0
+  canUpgrade: 1
+  upgradeTower: {fileID: 0}
 --- !u!1 &5056030930177171808
 GameObject:
   m_ObjectHideFlags: 0

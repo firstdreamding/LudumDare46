@@ -6,6 +6,8 @@ public class TowerStats : MonoBehaviour
 {
     public int dir;
     public bool dirMatter;
+    public bool canUpgrade;
+    public GameObject upgradeTower;
     
     public void UpdateDir()
     {
