@@ -7,17 +7,22 @@ using UnityEngine.EventSystems;
 public class Information : MonoBehaviour
 {
 
-    public GameObject currentGameObject;
-    public TowerStats ts;
-
     private RectTransform damageTrans;
     private RectTransform fireTrans;
+    public GameObject currentGameObject;
+    public TowerStats ts;
 
     // Start is called before the first frame update
     void Awake()
     {
         damageTrans = transform.Find("Damage").Find("Bar").Find("Content").GetComponent<RectTransform>();
         fireTrans = transform.Find("Fire Rate").Find("Bar").Find("Content").GetComponent<RectTransform>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     public void SetInfo(float damage, float firerate, TowerStats ts, GameObject go)
@@ -40,9 +45,6 @@ public class Information : MonoBehaviour
             this.ts = ts;
             transform.Find("Dropdown").GetComponent<Dropdown>().value = ts.dir;
         }
-
-        transform.Find("Name").GetComponent<Text>().text = ts.hireName;
-        transform.Find("Icon").GetComponent<Image>().sprite = ts.icon;
 
         this.ts = ts;
         currentGameObject = go;

@@ -90,10 +90,6 @@ MonoBehaviour:
     type: 3}
   coolDown: 0.8
   damage: 1
-  hireName: Rock Thrower
-  wage: 10
-  icon: {fileID: 21300000, guid: 0e4809025d234484d8f3c6a8c5633e7e, type: 3}
-  blurb: Basic Ranged Attacker
 --- !u!1 &5056030930177171808
 GameObject:
   m_ObjectHideFlags: 0

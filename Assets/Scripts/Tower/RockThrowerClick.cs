@@ -7,7 +7,7 @@ public class RockThrowerClick : MonoBehaviour
     RockThrower script;
     Animator anim;
 
-    private void Awake()
+    private void Start()
     {
         script = transform.parent.GetComponent<RockThrower>();
         anim = GetComponent<Animator>();

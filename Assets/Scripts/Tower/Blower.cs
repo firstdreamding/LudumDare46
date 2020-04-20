@@ -29,7 +29,7 @@ public class Blower : MonoBehaviour
     private Vector3 mousePosition;
     private TowerStats ts;
 
-    void Awake()
+    void Start()
     {
         inRange = new List<GameObject>();
         lastShoot = Time.time;
@@ -116,7 +116,7 @@ public class Blower : MonoBehaviour
     {
         if (state != State.SELECT)
         {
-            if (!ts.CheckIfUIHovered() && MainScript.MSCRIPT.state != MainScript.State.BUILD)
+            if (!ts.CheckIfUIHovered())
             {
                 information.SetActive(true);
                 information.GetComponent<Information>().SetInfo(ts.damage, ts.coolDown, ts, gameObject);
