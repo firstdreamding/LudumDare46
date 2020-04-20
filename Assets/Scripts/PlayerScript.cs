@@ -8,6 +8,7 @@ enum Item
 }
 public class PlayerScript : MonoBehaviour
 {
+    public static PlayerScript player;
     public float speed;
     public float cooldown;
     public Scythe scythePrefab;
@@ -15,19 +16,25 @@ public class PlayerScript : MonoBehaviour
 
     Animator anim;
     SpriteRenderer spr;
-    HUD hud;
     private Item item;
     private float nextActive = 0;
     int direction = 2;
     private float velocityX = 0;
     private float velocityY = 0;
     public Sprite[] idles;
+    private void Awake()
+    {
+        if (player != null)
+        {
+            Destroy(player);
+        }
+        player = this;
+    }
     void Start()
     {
         item = Item.MAGIC;
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
-        hud = GameObject.Find("HUD").GetComponent<HUD>();
     }
     // Update is called once per frame
     void Update()
@@ -61,9 +68,14 @@ public class PlayerScript : MonoBehaviour
             if (drop == "GOLD")
             {
                 gold += 5;
-                hud.setGold(gold);
+                HUD.hud.setGold(gold);
             }
         }
+    }
+    public void incGold(int count)
+    {
+        gold += count;
+        HUD.hud.setGold(gold);
     }
     void FixedUpdate()
     {

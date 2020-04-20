@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
             enemyStats.state = EnemyStats.State.DEAD;
             anim.SetBool("Dead", true);
             GetComponent<BoxCollider2D>().enabled = false;
+            PlayerScript.player.incGold(1);
         }
     }
     private void FixedUpdate()

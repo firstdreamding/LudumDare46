@@ -96,9 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfabbe3a60eafac4ab0799271af4ef29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSummon: 2
-  prefab: {fileID: 6150287724081406818, guid: 6672b41e22df4814e8632332da68cf4c, type: 3}
+  prefabs:
+  - {fileID: 6150287724081406818, guid: 6672b41e22df4814e8632332da68cf4c, type: 3}
+  - {fileID: 5232211214402903664, guid: 76081dcce2e0b244d90cad4f17309f90, type: 3}
   targetMove: {x: 0, y: 0}
+  summoned: 0
 --- !u!61 &3491054240237568764
 BoxCollider2D:
   m_ObjectHideFlags: 0
