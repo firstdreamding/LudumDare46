@@ -49,11 +49,21 @@ public class EnemyStats : MonoBehaviour
     {
         if (collision.tag == "Projectile")
         {
-            hp = (int)(hp - collision.GetComponent<Projectile>().GetDamage());
+            hp = (int)(hp - collision.GetComponent<Projectile>().GetDamage());  
         }
         else if (collision.tag == "WindProjectile" && collision.GetComponent<WindProjectile>().canHit(gameObject.GetInstanceID()))
         {
             Attacked(0, collision.transform.position, 1f, 0.05f);
+        }
+        else if (collision.tag == "Spear")
+        {
+            hp = (int)(hp - collision.GetComponent<Spear>().GetDamage());
+        }
+        else if (collision.tag == "Magic")
+        {
+            GameObject temp1 = Instantiate(collision.GetComponent<Magic>().magic, transform.position, Quaternion.identity);
+            temp1.transform.parent = transform;
+            hp = (int)(hp - collision.GetComponent<Magic>().GetDamage());
         }
         else if (collision.tag == "PathTurn")
         {

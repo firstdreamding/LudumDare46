@@ -28,6 +28,10 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
     private finish state;
     private float wait;
     private Vector3 down;
+    public float speed1;
+    public float speed2;
+    public float speed3;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -48,6 +52,10 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
 
         GameObject temp = transform.parent.Find("Seal").gameObject;
         seal = new Vector3(temp.transform.position.x, temp.transform.position.y, transform.position.z);
+
+        speed1 = Vector3.Distance(target, og) / speed1;
+        speed2 = Vector3.Distance(target, og) / speed2;
+        speed3 = Vector3.Distance(og, seal) / speed3;
     }
 
     void OnEnable()
@@ -67,7 +75,7 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
             switch (state)
             {
                 case (finish.moving):
-                    transform.position = Vector3.MoveTowards(transform.position, seal, 1300f * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, seal, speed3);
                     if (transform.position == seal)
                     {
                         state = finish.wait;
@@ -98,11 +106,11 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
         {
             if (isHovering)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target, 320f * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, target, speed1);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, og, 450f * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, og, speed2);
             }
         }
     }

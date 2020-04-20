@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpearThrower : MonoBehaviour
+public class Priest : MonoBehaviour
 {
     enum State
     {
@@ -75,7 +75,7 @@ public class SpearThrower : MonoBehaviour
                         {
                             lastShoot = Time.time;
                             startShoot = Time.time;
-                            anim.SetTrigger("IsThrowing");
+                            anim.SetTrigger("IsCasting");
                             anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
                             anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
                             currentAmmo--;
@@ -93,7 +93,7 @@ public class SpearThrower : MonoBehaviour
                 if (startShoot + delay < Time.time && inRange.Count > 0)
                 {
                     GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                    temp.GetComponent<Spear>().SetValues(inRange[0], ts.damage);
+                    temp.GetComponent<Magic>().SetValues(ts.damage);
                     shooting = false;
                 }
             }

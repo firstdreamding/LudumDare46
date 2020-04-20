@@ -572,6 +572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6047913990234115708, guid: 914e98bdd50948340a0974ae7b21dda0, type: 3}
   delay: 500
+  speed1: 7
+  speed2: 5.5
+  speed3: 10
 --- !u!114 &131686989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5913,6 +5916,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5056030930078583506, guid: 88a764b2ef9fd8f42b8549c0b1112642, type: 3}
   delay: 450
+  speed1: 7
+  speed2: 5.5
+  speed3: 10
 --- !u!114 &2010802979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6002,7 +6008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedc1ec000bea2b488a60b80c6c33654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 9
 --- !u!1 &2107569752
 GameObject:
   m_ObjectHideFlags: 0

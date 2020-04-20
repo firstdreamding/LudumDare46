@@ -24,7 +24,13 @@ public class UpgradeScript : MonoBehaviour, IPointerClickHandler
     {
         GameObject test = Instantiate(instance.ts.upgradeTower, instance.currentGameObject.transform.position, Quaternion.identity);
         TowerStats temp = test.GetComponent<TowerStats>();
+        int dir = instance.ts.dir;
         Destroy(instance.currentGameObject);
+        if (temp.dirMatter)
+        {
+            temp.dir = dir;
+            temp.UpdateDir();
+        }
         instance.SetInfo(temp.damage, temp.coolDown, temp, test);
     }
 }
