@@ -90,6 +90,10 @@ MonoBehaviour:
     type: 3}
   coolDown: 0.8
   damage: 1
+  hireName: Rock Thrower
+  wage: 10
+  icon: {fileID: 0}
+  blurb: Basic Range Unit
 --- !u!1 &5056030930177171808
 GameObject:
   m_ObjectHideFlags: 0

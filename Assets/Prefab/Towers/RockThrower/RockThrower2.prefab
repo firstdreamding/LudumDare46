@@ -251,6 +251,10 @@ MonoBehaviour:
   upgradeTower: {fileID: 0}
   coolDown: 0.8
   damage: 2
+  hireName: Rock Thrower
+  wage: 10
+  icon: {fileID: 0}
+  blurb: Sharper Rocks
 --- !u!1 &3923881079977572434
 GameObject:
   m_ObjectHideFlags: 0
