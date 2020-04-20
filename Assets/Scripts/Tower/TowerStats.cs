@@ -42,7 +42,7 @@ public class TowerStats : MonoBehaviour
             transform.Find("NeedMoney").gameObject.SetActive(false);
             roundsNotPayed = 0;
             moneyOwed = 0;
-            PlayerScript.player.gold -= moneyOwed;
+            PlayerScript.player.incGold(-moneyOwed);
         }
 
     }

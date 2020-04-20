@@ -2651,7 +2651,7 @@ MonoBehaviour:
   state: 0
   towerActive: []
   towerTemp: {fileID: 0}
-  heath: 2
+  heath: 50
 --- !u!81 &1015048479
 AudioListener:
   m_ObjectHideFlags: 0

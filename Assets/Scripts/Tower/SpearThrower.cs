@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockThrower : MonoBehaviour
+public class SpearThrower : MonoBehaviour
 {
     enum State
     {
@@ -73,16 +73,13 @@ public class RockThrower : MonoBehaviour
                     {
                         if (inRange.Count > 0)
                         {
-                            if (inRange[0].GetComponent<EnemyStats>().hp > 0)
-                            {
-                                lastShoot = Time.time;
-                                startShoot = Time.time;
-                                anim.SetTrigger("IsThrowing");
-                                anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
-                                anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
-                                currentAmmo--;
-                                shooting = true;
-                            }
+                            lastShoot = Time.time;
+                            startShoot = Time.time;
+                            anim.SetTrigger("IsThrowing");
+                            anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
+                            anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
+                            currentAmmo--;
+                            shooting = true;
                         }
                     }
                     else
@@ -90,16 +87,18 @@ public class RockThrower : MonoBehaviour
                         needAmmo.SetActive(true);
                     }
                 }
-            } else
+            }
+            else
             {
                 if (startShoot + delay < Time.time && inRange.Count > 0)
                 {
                     GameObject temp = Instantiate(prefab, transform.position, Quaternion.identity);
-                    temp.GetComponent<Projectile>().SetValues(inRange[0], ts.damage);
+                    temp.GetComponent<Spear>().SetValues(inRange[0], ts.damage);
                     shooting = false;
                 }
             }
-        } else if (state == State.SELECT)
+        }
+        else if (state == State.SELECT)
         {
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
@@ -125,7 +124,8 @@ public class RockThrower : MonoBehaviour
             highlight.SetActive(false);
             state = State.BUILT;
             MainScript.MSCRIPT.state = MainScript.State.GAME;
-        } else
+        }
+        else
         {
             Debug.Log("CANNOT BUILD");
         }
@@ -148,7 +148,8 @@ public class RockThrower : MonoBehaviour
 
                 Reload();
             }
-        } else
+        }
+        else
         {
             SetDown();
         }
@@ -183,6 +184,6 @@ public class RockThrower : MonoBehaviour
         if (inCollision == 0)
         {
             highlight.GetComponent<SpriteRenderer>().color = canBuild;
-        }  
+        }
     }
 }
