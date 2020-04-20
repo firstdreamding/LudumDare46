@@ -149,12 +149,13 @@ MonoBehaviour:
   resetPoint: {x: 0, y: 0}
   knockbackPoint: {x: 0, y: 0}
   knockbackSpeed: 0
-  toNext: []
   state: 0
+  toNext: []
+  deathPrefab: {fileID: 5452568145918339602, guid: 7803687ab22079f4c93d7d17af042605,
+    type: 3}
+  goldDrop: 5
   hp: 40
-  speed: 0
-  maxSpeed: 0.02
-  wind: {fileID: 0}
+  speed: 0.02
 --- !u!95 &7585273826330247185
 Animator:
   serializedVersion: 3
@@ -186,5 +187,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a6f31c15c78354d8dd9b9043f4e3e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 5452568145918339602, guid: 7803687ab22079f4c93d7d17af042605,
-    type: 3}

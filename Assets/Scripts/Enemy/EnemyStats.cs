@@ -5,9 +5,13 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     //don't hardcode these, defined in functions
-    public Vector2 resetPoint;
-    public Vector2 knockbackPoint;
-    public float knockbackSpeed;
+    [HideInInspector] public Vector2 resetPoint;
+    [HideInInspector] public Vector2 knockbackPoint;
+    [HideInInspector] public float knockbackSpeed;
+    [HideInInspector] public State state;
+    [HideInInspector] public List<Vector2> toNext;
+    public GameObject deathPrefab;
+    public int goldDrop;
     public enum State
     {
         KNOCKBACK,
@@ -15,20 +19,11 @@ public class EnemyStats : MonoBehaviour
         ONPATH,
         DEAD
     }
-    public List<Vector2> toNext;
-    public State state;
     public int hp;
     public float speed;
-    public float maxSpeed;
-
-    public void SetUp(int hp)
-    {
-        this.hp = hp;
-    }
 
     public void Init(Vector2 firstPoint)
     {
-
         state = State.ONPATH;
         toNext = new List<Vector2>();
         toNext.Add(new Vector3(firstPoint.x, firstPoint.y, transform.position.z));
@@ -37,7 +32,6 @@ public class EnemyStats : MonoBehaviour
 
         anim.SetFloat("SpeedX", (firstPoint.x - transform.position.x));
         anim.SetFloat("SpeedY", (firstPoint.y - transform.position.y));
-        speed = maxSpeed;
     }
     public void Attacked(int damage, Vector3 attackerPos, float knockbackConstant, float knockbackSpeed)
     {
@@ -76,15 +70,9 @@ public class EnemyStats : MonoBehaviour
     public void OnTriggerEx(Collider2D collider)
     {
     }
-    private void FixedUpdate()
+    public void CompletedDeath()
     {
-        if (speed != maxSpeed)
-        {
-            speed += 0.002f;
-        }
-        else if (speed > 0)
-        {
-            speed = maxSpeed;
-        }
+        Instantiate(deathPrefab, new Vector3(transform.position.x, transform.position.y, -4), Quaternion.identity);
+        Destroy(gameObject);
     }
 }

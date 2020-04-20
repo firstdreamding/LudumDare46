@@ -6,8 +6,6 @@ using System;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject deathPrefab;
-
     //don't hardcode these, defined in functions
     private Animator anim;
     private EnemyStats enemyStats;
@@ -25,7 +23,7 @@ public class Enemy : MonoBehaviour
             enemyStats.state = EnemyStats.State.DEAD;
             anim.SetBool("Dead", true);
             GetComponent<BoxCollider2D>().enabled = false;
-            PlayerScript.player.incGold(1);
+            PlayerScript.player.incGold(enemyStats.goldDrop);
         }
     }
     private void FixedUpdate()
@@ -84,9 +82,4 @@ public class Enemy : MonoBehaviour
         enemyStats.OnTriggerEx(collision);
     }
 
-    public void CompletedDeath()
-    {
-        Instantiate(deathPrefab, new Vector3(transform.position.x, transform.position.y, -4), Quaternion.identity);
-        Destroy(gameObject);
-    }
 }
