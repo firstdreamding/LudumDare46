@@ -63,7 +63,7 @@ public class EnemyStats : MonoBehaviour
         }
         else if (collision.tag == "Pharaoh")
         {
-            Debug.Log("Oh no, he was hit");
+            MainScript.MSCRIPT.heath -= 1;
             Destroy(gameObject);
         }
     }

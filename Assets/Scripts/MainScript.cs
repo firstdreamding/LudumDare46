@@ -10,11 +10,13 @@ public class MainScript : MonoBehaviour
     {
         GAME,
         MENU,
-        BUILD
+        BUILD,
+        GAMEOVER
     }
     public State state;
     public List<GameObject> towerActive;
     public GameObject towerTemp;
+    public int heath;
 
     private GameObject buyMenu;
 
