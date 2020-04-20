@@ -29,19 +29,17 @@ public class SummonTile : MonoBehaviour
         }
         return -1;
     }
-
+    public float summonDelay = 0.5f;
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(wm.waveDelay + lastSummon + " " + Time.time);
-        if (wm.inWave && wm.waveDelay + lastSummon < Time.time)
+        if (wm.inWave && summonDelay + lastSummon < Time.time)
         {
             lastSummon = Time.time;
             int toSpawn = canSpawn();
             if (toSpawn == -1)
             {
-                wm.inWave = false;
-                Debug.Log("wave done");
+                wm.nextWave();
             }
             else
             {

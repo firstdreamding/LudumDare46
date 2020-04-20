@@ -7,11 +7,12 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager wm;
     public GameObject[] enemies;
-    public TextAsset waveDataText;
+    // Every x rounds spawn y more
+    public Vector2Int[] spawnRates;
     [HideInInspector] public bool inWave = false;
     [HideInInspector] public int[] enemiesToSpawn;
     [HideInInspector] public float waveDelay;
-    [HideInInspector] public int wave;
+    [HideInInspector] public int wave = 0;
     void Awake()
     {
         if (wm != null)
@@ -22,16 +23,25 @@ public class WaveManager : MonoBehaviour
     }
     void Start()
     {
-        waveDelay = 0.3f;
-        wave = 0;
+        waveDelay = 2f;
+        enemiesToSpawn = new int[enemies.Length];
         nextWave();
     }
     public void nextWave()
     {
+        wave++;
+        inWave = false;
+        for (int i = 0; i < enemies.Length; ++i)
+        {
+            enemiesToSpawn[i] = spawnRates[i].y * (wave / spawnRates[i].x);
+        }
+        enemiesToSpawn[0]++;
+        Invoke("startWave", waveDelay);
+    }
+    private void startWave()
+    {
+        HUD.hud.setWave(wave);
         inWave = true;
-        string[] fLines = Regex.Split(waveDataText.text, "[\r\n]+");
-        enemiesToSpawn = fLines[wave].Split(' ').Select(int.Parse).ToArray();
-        HUD.hud.setWave(++wave);
     }
     // Update is called once per frame
     void Update()

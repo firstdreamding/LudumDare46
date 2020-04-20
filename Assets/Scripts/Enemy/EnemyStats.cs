@@ -63,7 +63,9 @@ public class EnemyStats : MonoBehaviour
         else if (collision.tag == "PathTurn")
         {
             Vector2 tempVec = collision.gameObject.GetComponent<TurnTile>().targetMove;
-            toNext.Add(tempVec);
+            float nextWidth = 0.8f * collision.gameObject.GetComponent<SpriteRenderer>().size.x;
+            Vector2 randVec = new Vector2(nextWidth * (Random.value - 0.5f), nextWidth * (Random.value - 0.5f));
+            toNext.Add(tempVec + randVec);
         }
         else if (collision.tag == "Pharaoh")
         {
