@@ -6,8 +6,6 @@ using System;
 
 public class CrocArmorEnemy : MonoBehaviour
 {
-    public GameObject deathPrefab;
-
     private Animator anim;
     private EnemyStats enemyStats;
 
@@ -24,7 +22,7 @@ public class CrocArmorEnemy : MonoBehaviour
             enemyStats.state = EnemyStats.State.DEAD;
             anim.SetBool("Dead", true);
             GetComponent<BoxCollider2D>().enabled = false;
-            PlayerScript.player.incGold(5);
+            PlayerScript.player.incGold(enemyStats.goldDrop);
         }
     }
     private void FixedUpdate()
@@ -76,11 +74,5 @@ public class CrocArmorEnemy : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         enemyStats.OnTriggerEx(collision);
-    }
-
-    public void CompletedDeath()
-    {
-        Instantiate(deathPrefab, new Vector3(transform.position.x, transform.position.y, -4), Quaternion.identity);
-        Destroy(gameObject);
     }
 }

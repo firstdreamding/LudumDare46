@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public class CrocHeavyArmorEnemy : MonoBehaviour
+public class Mummy : MonoBehaviour
 {
     private Animator anim;
     private EnemyStats enemyStats;
@@ -38,7 +38,6 @@ public class CrocHeavyArmorEnemy : MonoBehaviour
                 break;
             case EnemyStats.State.ONPATH:
                 OnPath();
-
                 break;
             case EnemyStats.State.KNOCKBACK:
                 transform.position = Vector3.MoveTowards(transform.position, enemyStats.knockbackPoint, enemyStats.knockbackSpeed);
