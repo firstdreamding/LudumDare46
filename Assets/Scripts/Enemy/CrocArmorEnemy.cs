@@ -30,6 +30,8 @@ public class CrocArmorEnemy : MonoBehaviour
         switch (enemyStats.state)
         {
             case EnemyStats.State.OFFPATH:
+                anim.SetFloat("SpeedX", (enemyStats.resetPoint.x - transform.position.x));
+                anim.SetFloat("SpeedY", (enemyStats.resetPoint.y - transform.position.y));
                 transform.position = Vector3.MoveTowards(transform.position, enemyStats.resetPoint, enemyStats.speed);
                 if (Vector3.Distance(transform.position, enemyStats.resetPoint) < 0.001f)
                 {

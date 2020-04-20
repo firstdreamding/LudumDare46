@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     [HideInInspector] public bool inWave = false;
     [HideInInspector] public int[] enemiesToSpawn;
     [HideInInspector] public float waveDelay;
-    [HideInInspector] public int wave = 0;
+    [HideInInspector] public int wave;
     void Awake()
     {
         if (wm != null)
@@ -23,7 +23,8 @@ public class WaveManager : MonoBehaviour
     }
     void Start()
     {
-        waveDelay = 2f;
+        wave = 0;
+        waveDelay = 10f;
         enemiesToSpawn = new int[enemies.Length];
         nextWave();
     }
@@ -35,11 +36,15 @@ public class WaveManager : MonoBehaviour
         {
             enemiesToSpawn[i] = spawnRates[i].y * (wave / spawnRates[i].x);
         }
-        enemiesToSpawn[0]+=3;
+        enemiesToSpawn[0] += 3;
         Invoke("startWave", waveDelay);
     }
     private void startWave()
     {
+        foreach (TowerStats ts in FindObjectsOfType<TowerStats>())
+        {
+            ts.Pay();
+        }
         HUD.hud.setWave(wave);
         inWave = true;
     }

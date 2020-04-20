@@ -38,12 +38,13 @@ public class EnemyStats : MonoBehaviour
         hp -= damage;
         Vector2 displacement = knockbackConstant * (transform.position - attackerPos).normalized;
         knockbackPoint = (Vector2)transform.position + displacement;
-        this.knockbackSpeed = knockbackSpeed * knockbackConstant;
+        this.knockbackSpeed = knockbackSpeed;
         Vector2 b = toNext[0] - (Vector2)transform.position;
         resetPoint = (Vector2)transform.position + b * Vector2.Dot(displacement, b) / Vector2.Dot(b, b);
         state = State.KNOCKBACK;
     }
 
+    private HashSet<int> cornersmet = new HashSet<int>();
     public void OnTrigger(Collider2D collision)
     {
         if (collision.tag == "Projectile")
@@ -52,14 +53,18 @@ public class EnemyStats : MonoBehaviour
         }
         else if (collision.tag == "WindProjectile" && collision.GetComponent<WindProjectile>().canHit(gameObject.GetInstanceID()))
         {
-            Attacked(0, collision.transform.position, 0.25f, 0.1f);
+            Attacked(0, collision.transform.position, 1f, 0.05f);
         }
         else if (collision.tag == "PathTurn")
         {
-            Vector2 tempVec = collision.gameObject.GetComponent<TurnTile>().targetMove;
-            float nextWidth = 0.8f * collision.gameObject.GetComponent<SpriteRenderer>().size.x;
-            Vector2 randVec = new Vector2(nextWidth * (Random.value - 0.5f), nextWidth * (Random.value - 0.5f));
-            toNext.Add(tempVec + randVec);
+            if (!cornersmet.Contains(collision.GetInstanceID()))
+            {
+                cornersmet.Add(collision.GetInstanceID());
+                Vector2 tempVec = collision.gameObject.GetComponent<TurnTile>().targetMove;
+                float nextWidth = 0.8f * collision.gameObject.GetComponent<SpriteRenderer>().size.x;
+                Vector2 randVec = new Vector2(nextWidth * (Random.value - 0.5f), nextWidth * (Random.value - 0.5f));
+                toNext.Add(tempVec + randVec);
+            }
         }
         else if (collision.tag == "Pharaoh")
         {
