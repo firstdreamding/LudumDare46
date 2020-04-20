@@ -148,11 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: {r: 0, g: 1, b: 0.19915867, a: 1}
   cannotBuild: {r: 1, g: 0, b: 0, a: 1}
-  coolDown: 2
-  damage: 0
   maxAmmo: 100
   inCollision: 0
   prefab: {fileID: 4846151860140777023, guid: e4b1c4354b3339c48b2825161b0ed35c, type: 3}
+  isUpgrade: 0
 --- !u!114 &8506323577835049275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +168,8 @@ MonoBehaviour:
   dirMatter: 1
   canUpgrade: 0
   upgradeTower: {fileID: 0}
+  coolDown: 2
+  damage: 0
 --- !u!1 &6047913990939935117
 GameObject:
   m_ObjectHideFlags: 0

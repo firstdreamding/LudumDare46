@@ -13,11 +13,10 @@ public class Blower : MonoBehaviour
 
     public Color canBuild;
     public Color cannotBuild;
-    public float coolDown;
-    public float damage;
     public int maxAmmo;
     public int inCollision;
     public GameObject prefab;
+    public bool isUpgrade;
 
     List<GameObject> inRange;
     private State state;
@@ -43,7 +42,15 @@ public class Blower : MonoBehaviour
         highlight = transform.Find("Highlight").gameObject;
         highlight.GetComponent<SpriteRenderer>().color = canBuild;
 
-        state = State.SELECT;
+        if (isUpgrade)
+        {
+            state = State.BUILT;
+        }
+        else
+        {
+            state = State.SELECT;
+        }
+
         ts = GetComponent<TowerStats>();
     }
 
@@ -52,7 +59,7 @@ public class Blower : MonoBehaviour
     {
         if (state == State.BUILT)
         {
-            if (lastShoot + coolDown < Time.time)
+            if (lastShoot + ts.coolDown < Time.time)
             {
                 if (currentAmmo > 0)
                 {
@@ -79,7 +86,7 @@ public class Blower : MonoBehaviour
     void spawnProjectile()
     {
         WindProjectile temp = Instantiate(prefab, transform.position, Quaternion.identity).GetComponent<WindProjectile>();
-        temp.SetValues(Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir)) * new Vector3(0, 1), damage);
+        temp.SetValues(Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir)) * new Vector3(0, 1), ts.damage);
         temp.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, -90 * ts.dir));
         currentAmmo--;
     }
@@ -112,7 +119,7 @@ public class Blower : MonoBehaviour
             if (!ts.CheckIfUIHovered())
             {
                 information.SetActive(true);
-                information.GetComponent<Information>().SetInfo(damage, coolDown, ts, gameObject);
+                information.GetComponent<Information>().SetInfo(ts.damage, ts.coolDown, ts, gameObject);
 
                 Reload();
             }

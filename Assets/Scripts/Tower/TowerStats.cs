@@ -9,7 +9,9 @@ public class TowerStats : MonoBehaviour
     public bool dirMatter;
     public bool canUpgrade;
     public GameObject upgradeTower;
-    
+    public float coolDown;
+    public float damage;
+
     public void UpdateDir()
     {
         GetComponent<Animator>().SetFloat("direction", dir);
