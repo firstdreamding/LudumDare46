@@ -7,12 +7,15 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager wm;
     public GameObject[] enemies;
+
     // Every x rounds spawn y more
     public Vector2Int[] spawnRates;
     [HideInInspector] public bool inWave = false;
     [HideInInspector] public int[] enemiesToSpawn;
     [HideInInspector] public float waveDelay;
     [HideInInspector] public int wave;
+    [HideInInspector] public int enemiesInGame;
+    private bool waitingWave;
     void Awake()
     {
         if (wm != null)
@@ -27,6 +30,7 @@ public class WaveManager : MonoBehaviour
         waveDelay = 10f;
         enemiesToSpawn = new int[enemies.Length];
         nextWave();
+        enemiesInGame = 0;
     }
     public void nextWave()
     {
@@ -37,7 +41,7 @@ public class WaveManager : MonoBehaviour
             enemiesToSpawn[i] = spawnRates[i].y * (wave / spawnRates[i].x);
         }
         enemiesToSpawn[0] += 1;
-        Invoke("startWave", waveDelay);
+        waitingWave = true;
     }
     private void startWave()
     {
@@ -51,6 +55,11 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (waitingWave && enemiesInGame < 1)
+        {
+            waitingWave = false;
+            Debug.Log(enemiesInGame);
+            Invoke("startWave", waveDelay);
+        }
     }
 }
