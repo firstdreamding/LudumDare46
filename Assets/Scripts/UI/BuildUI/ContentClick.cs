@@ -118,6 +118,13 @@ public class ContentClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
     public void OnPointerClick(PointerEventData eventData)
     {
         infoGO.SetActive(false);
+        foreach (Transform child in transform.parent)
+        {
+            if (child.tag == "Stamp" && child.gameObject != gameObject)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
         finishing = true;
     }
 
