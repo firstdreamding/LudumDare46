@@ -9973,10 +9973,10 @@ MonoBehaviour:
     type: 3}
   coolDown: 2
   damage: 1
-  cost: 25
+  cost: 50
   upgradeBlurb: Anubis?
-  hireName: Rock Thrower
-  wage: 5
+  hireName: Priest
+  wage: 9
   tolerance: 4
   icon: {fileID: 0}
   blurb: Basic Range Unit

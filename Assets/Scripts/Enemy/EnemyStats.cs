@@ -49,7 +49,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (collision.tag == "Projectile")
         {
-            hp = (int)(hp - collision.GetComponent<Projectile>().GetDamage());  
+            hp = (int)(hp - collision.GetComponent<Projectile>().GetDamage());
         }
         else if (collision.tag == "WindProjectile" && collision.GetComponent<WindProjectile>().canHit(gameObject.GetInstanceID()))
         {
@@ -79,12 +79,13 @@ public class EnemyStats : MonoBehaviour
         else if (collision.tag == "Pharaoh")
         {
             MainScript.MSCRIPT.heath -= 1;
-            Destroy(gameObject);
+            CompletedDeath();
         }
     }
 
     public void CompletedDeath()
     {
+        WaveManager.wm.enemiesInGame--;
         Instantiate(deathPrefab, new Vector3(transform.position.x, transform.position.y, -4), Quaternion.identity);
         Destroy(gameObject);
     }
@@ -92,6 +93,7 @@ public class EnemyStats : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        WaveManager.wm.enemiesInGame++;
     }
 
     private void Update()
