@@ -55,6 +55,7 @@ public class MainScript : MonoBehaviour
         }
         else if (state == State.BUILD)
         {
+            transform.position = PlayerScript.player.transform.position + offSet;
             if (Input.GetKey(KeyCode.Escape) && towerTemp != null)
             {
                 Destroy(towerTemp);
