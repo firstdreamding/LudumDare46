@@ -19,7 +19,7 @@ public class HUD : MonoBehaviour
         hud = this;
         goldText = transform.Find("Gold").GetComponent<Text>();
         waveText = transform.Find("Wave").GetComponent<Text>();
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             inventorySlots[i] = transform.Find("Inventory/INV" + i).gameObject.GetComponent<RawImage>();
             inventoryCounts[i] = transform.Find("Inventory/COUNT" + i).gameObject.GetComponent<Text>();
@@ -60,7 +60,7 @@ public class HUD : MonoBehaviour
     }
     public void displayInv(Dictionary<Item, int> inventory)
     {
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 3; ++i)
         {
             inventorySlots[i].texture = itemSpriteMap[items[i]];
             inventoryCounts[i].text = "" + inventory[items[i]];
