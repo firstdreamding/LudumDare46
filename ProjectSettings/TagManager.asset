@@ -16,6 +16,7 @@ TagManager:
   - Magic
   - Ruin
   - Stamp
+  - PAUSE
   layers:
   - Default
   - TransparentFX
