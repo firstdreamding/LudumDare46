@@ -65,6 +65,11 @@ public class Blower : MonoBehaviour
                 {
                     if (inRange.Count > 0)
                     {
+                        if (inRange[0] == null)
+                        {
+                            inRange.Remove(inRange[0]);
+                            return;
+                        }
                         lastShoot = Time.time;
                         anim.SetTrigger("blow");
                         Invoke("spawnProjectile", 0.15f);

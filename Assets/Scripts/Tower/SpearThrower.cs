@@ -73,6 +73,11 @@ public class SpearThrower : MonoBehaviour
                     {
                         if (inRange.Count > 0)
                         {
+                            if (inRange[0] == null)
+                            {
+                                inRange.Remove(inRange[0]);
+                                return;
+                            }
                             lastShoot = Time.time;
                             startShoot = Time.time;
                             anim.SetTrigger("IsThrowing");

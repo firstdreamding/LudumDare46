@@ -73,16 +73,18 @@ public class RockThrower : MonoBehaviour
                     {
                         if (inRange.Count > 0)
                         {
-                            if (inRange[0].GetComponent<EnemyStats>().hp > 0)
+                            if (inRange[0] == null)
                             {
-                                lastShoot = Time.time;
-                                startShoot = Time.time;
-                                anim.SetTrigger("IsThrowing");
-                                anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
-                                anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
-                                currentAmmo--;
-                                shooting = true;
+                                inRange.Remove(inRange[0]);
+                                return;
                             }
+                            lastShoot = Time.time;
+                            startShoot = Time.time;
+                            anim.SetTrigger("IsThrowing");
+                            anim.SetFloat("DirX", inRange[0].transform.position.x - transform.position.x);
+                            anim.SetFloat("DirY", inRange[0].transform.position.y - transform.position.y);
+                            currentAmmo--;
+                            shooting = true;
                         }
                     }
                     else
