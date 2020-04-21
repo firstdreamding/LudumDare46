@@ -59,9 +59,9 @@ public class BuildManager : MonoBehaviour
         lastTime = Time.time;
         foreach (Transform child in transform)
         {
-            if (child.tag == "Stamp" && child.gameObject != gameObject)
+            if (child.tag == "Stamp")
             {
-                child.gameObject.SetActive(false);
+                child.gameObject.SetActive(true);
             }
         }
     }
