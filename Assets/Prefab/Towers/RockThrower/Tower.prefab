@@ -4941,7 +4941,7 @@ MonoBehaviour:
   hireName: Rock Thrower
   wage: 5
   tolerance: 5
-  icon: {fileID: 0}
+  icon: {fileID: -8838834376604213797, guid: ee769c4118b5498489a4c8102c158a46, type: 3}
   blurb: Basic Range Unit
 --- !u!1 &5056030930177171808
 GameObject:

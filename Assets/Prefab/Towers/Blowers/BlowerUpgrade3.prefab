@@ -443,7 +443,7 @@ MonoBehaviour:
   hireName: Leaf Blower
   wage: 10
   tolerance: 3
-  icon: {fileID: 0}
+  icon: {fileID: 8802052945394528881, guid: 99740200e0f47854cbb7d28f91015bbe, type: 3}
   blurb: Keeps the world cooler
 --- !u!95 &8159677898421299458
 Animator:

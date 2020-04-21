@@ -4969,7 +4969,7 @@ MonoBehaviour:
   hireName: ANUBIS
   wage: 12
   tolerance: 4
-  icon: {fileID: 0}
+  icon: {fileID: -64727953624455665, guid: 60a71a8c63580eb45ad3c487df8a6d19, type: 3}
   blurb: Basic Range Unit
 --- !u!114 &388682654789812178
 MonoBehaviour:

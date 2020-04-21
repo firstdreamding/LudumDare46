@@ -9978,7 +9978,7 @@ MonoBehaviour:
   hireName: Priest
   wage: 9
   tolerance: 4
-  icon: {fileID: 0}
+  icon: {fileID: -3637889314790030571, guid: d842367d2eb714a46b9f4b1c230a794f, type: 3}
   blurb: Basic Range Unit
 --- !u!114 &-339190249234197530
 MonoBehaviour:

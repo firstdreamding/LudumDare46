@@ -13,12 +13,14 @@ public class InfoHandler : MonoBehaviour
     private Text wage;
     private Image icon;
     private Image background;
+    private Image content;
 
     private Color changingName;
     private Color changingWage;
     private Color changingIcon;
     private Color changingBlerb;
     private Color changingBackground;
+    private Color changingContent;
 
     private float alphaIndex;
 
@@ -30,12 +32,14 @@ public class InfoHandler : MonoBehaviour
         wage = transform.Find("Wage").GetComponent<Text>();
         icon = transform.Find("Icon").GetComponent<Image>();
         background = GetComponent<Image>();
+        content = transform.Find("Icon").Find("Image").GetComponent<Image>();
 
         changingBlerb = blerb.color;
         changingWage = wage.color;
         changingIcon = icon.color;
         changingName = hireName.color;
         changingBackground = background.color;
+        changingContent = content.color;
 
         endingAlpha = endingAlpha/250;
 
@@ -48,7 +52,7 @@ public class InfoHandler : MonoBehaviour
 
         blerb.text = ts.blurb;
         hireName.text = ts.hireName;
-        transform.Find("Icon").Find("Content").GetComponent<Image>().sprite = ts.icon;
+        transform.Find("Icon").Find("Image").GetComponent<Image>().sprite = ts.icon;
         wage.text = "Wave Wage: " + ts.wage + " Coins";
 
         resetStuff();
@@ -64,11 +68,13 @@ public class InfoHandler : MonoBehaviour
             changingIcon.a = alphaIndex;
             changingName.a = alphaIndex;
             changingWage.a = alphaIndex;
+            changingContent.a = alphaIndex;
 
             blerb.color = changingBlerb;
             hireName.color = changingName;
             wage.color = changingWage;
             icon.color = changingIcon;
+            content.color = changingContent;
 
             if (alphaIndex < endingAlpha)
             {
@@ -86,11 +92,13 @@ public class InfoHandler : MonoBehaviour
         changingName.a = alphaIndex;
         changingWage.a = alphaIndex;
         changingBackground.a = alphaIndex;
+        changingContent.a = alphaIndex;
 
         blerb.color = changingBlerb;
         hireName.color = changingName;
         wage.color = changingWage;
         icon.color = changingIcon;
         background.color = changingBackground;
+        content.color = changingContent;
     }
 }

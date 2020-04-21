@@ -4920,7 +4920,7 @@ MonoBehaviour:
   hireName: Rock Thrower
   wage: 11
   tolerance: 3
-  icon: {fileID: 0}
+  icon: {fileID: 5638864621455705335, guid: 5f5037e044676fe44b11427e384e7aa4, type: 3}
   blurb: Sharper Rocks
 --- !u!114 &4968173071122325396
 MonoBehaviour:
