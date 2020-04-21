@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         wave = 0;
-        waveDelay = 2f;
+        waveDelay = 10f;
         enemiesToSpawn = new int[enemies.Length];
         nextWave();
     }
