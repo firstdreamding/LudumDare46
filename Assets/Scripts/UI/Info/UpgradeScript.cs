@@ -38,16 +38,20 @@ public class UpgradeScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameObject test = Instantiate(instance.ts.upgradeTower, instance.currentGameObject.transform.position, Quaternion.identity);
-        TowerStats temp = test.GetComponent<TowerStats>();
-        int dir = instance.ts.dir;
-        Destroy(instance.currentGameObject);
-        if (temp.dirMatter)
+        if (canPay)
         {
-            temp.dir = dir;
-            temp.UpdateDir();
+            GameObject test = Instantiate(instance.ts.upgradeTower, instance.currentGameObject.transform.position, Quaternion.identity);
+            TowerStats temp = test.GetComponent<TowerStats>();
+            int dir = instance.ts.dir;
+            Destroy(instance.currentGameObject);
+            if (temp.dirMatter)
+            {
+                temp.dir = dir;
+                temp.UpdateDir();
+            }
+            instance.SetInfo(temp.damage, temp.coolDown, temp, test);
+            PlayerScript.player.incGold(-1 * instance.ts.cost);
         }
-        instance.SetInfo(temp.damage, temp.coolDown, temp, test);
     }
 
     public void TsSetup(TowerStats ts)

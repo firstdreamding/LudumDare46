@@ -57,6 +57,13 @@ public class BuildManager : MonoBehaviour
     {
         waiting = true;
         lastTime = Time.time;
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "Stamp")
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
     }
 
     private void OnDisable()
