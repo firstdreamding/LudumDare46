@@ -5152,7 +5152,7 @@ MonoBehaviour:
   cost: 50
   upgradeBlurb: Spears!
   hireName: Rock Thrower
-  wage: 7
+  wage: 10
   tolerance: 3
   icon: {fileID: 0}
   blurb: Sharper Rocks

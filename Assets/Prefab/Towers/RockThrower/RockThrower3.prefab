@@ -4915,8 +4915,10 @@ MonoBehaviour:
   upgradeTower: {fileID: 0}
   coolDown: 0.66
   damage: 2
+  cost: 0
+  upgradeBlurb: 
   hireName: Rock Thrower
-  wage: 7
+  wage: 11
   tolerance: 3
   icon: {fileID: 0}
   blurb: Sharper Rocks
@@ -4939,6 +4941,7 @@ MonoBehaviour:
   inCollision: 0
   delay: 0.3
   isUpgrade: 1
+  inRange: []
 --- !u!1 &6707703027370500133
 GameObject:
   m_ObjectHideFlags: 0

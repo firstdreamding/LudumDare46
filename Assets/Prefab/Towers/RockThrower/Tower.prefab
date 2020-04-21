@@ -4940,7 +4940,7 @@ MonoBehaviour:
   upgradeBlurb: Sharper Rocks
   hireName: Rock Thrower
   wage: 5
-  tolerance: 4
+  tolerance: 5
   icon: {fileID: 0}
   blurb: Basic Range Unit
 --- !u!1 &5056030930177171808

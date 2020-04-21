@@ -5016,6 +5016,8 @@ MonoBehaviour:
     type: 3}
   coolDown: 2
   damage: 0
+  cost: 15
+  upgradeBlurb: 
   hireName: Leaf Blower
   wage: 7
   tolerance: 3

@@ -438,8 +438,10 @@ MonoBehaviour:
   upgradeTower: {fileID: 0}
   coolDown: 2
   damage: 0
+  cost: 0
+  upgradeBlurb: 
   hireName: Leaf Blower
-  wage: 7
+  wage: 10
   tolerance: 3
   icon: {fileID: 0}
   blurb: Keeps the world cooler
