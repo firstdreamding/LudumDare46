@@ -48,7 +48,7 @@ public class InfoHandler : MonoBehaviour
 
         blerb.text = ts.blurb;
         hireName.text = ts.hireName;
-        icon.sprite = ts.icon;
+        transform.Find("Icon").Find("Content").GetComponent<Image>().sprite = ts.icon;
         wage.text = "Wave Wage: " + ts.wage + " Coins";
 
         resetStuff();

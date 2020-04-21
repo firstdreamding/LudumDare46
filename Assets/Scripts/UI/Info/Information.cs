@@ -42,7 +42,7 @@ public class Information : MonoBehaviour
         }
 
         transform.Find("Name").GetComponent<Text>().text = ts.hireName;
-        transform.Find("Icon").GetComponent<Image>().sprite = ts.icon;
+        transform.Find("Icon").Find("Content").GetComponent<Image>().sprite = ts.icon;
 
         this.ts = ts;
 
