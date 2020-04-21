@@ -14,8 +14,8 @@ public class Ruins : MonoBehaviour
     // Start is called before the first frame update
     private State state;
     private SpriteRenderer spr;
-    private float spawnRate = 1.00f;
-    private WaitForSeconds delay = new WaitForSeconds(2);
+    private float spawnRate = 0.4f;
+    private WaitForSeconds delay = new WaitForSeconds(5);
     static Item[] drops = { Item.GOLD, Item.EYE, Item.ANKH };
     static float[] probs = { 0.5f, 0.75f, 1.01f };
 

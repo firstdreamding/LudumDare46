@@ -15,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float cooldown;
     public Scythe scythePrefab;
+    public EyeOfHorus eyePrefab;
+    public Ankh ankhPrefab;
     public int gold;
 
     Animator anim;
@@ -68,9 +70,13 @@ public class PlayerScript : MonoBehaviour
                     clone.doTransform(direction);
                     break;
                 case Item.EYE:
+                    Instantiate(eyePrefab).transform.position = transform.position;
                     inventory[selectedItem]--;
                     break;
                 case Item.ANKH:
+                    Ankh ankh = Instantiate(ankhPrefab);
+                    ankh.transform.position = transform.position;
+                    ankh.transform.localRotation = Quaternion.Euler(0, 0, -90 * (direction - 1));
                     inventory[selectedItem]--;
                     break;
             }
@@ -89,11 +95,6 @@ public class PlayerScript : MonoBehaviour
         else if (Input.GetKey(KeyCode.Alpha3))
         {
             selected = 2;
-            HUD.hud.setPointer(selected);
-        }
-        else if (Input.GetKey(KeyCode.Alpha4))
-        {
-            selected = 3;
             HUD.hud.setPointer(selected);
         }
     }

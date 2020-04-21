@@ -487,6 +487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6047913990234115708, guid: 914e98bdd50948340a0974ae7b21dda0, type: 3}
   delay: 500
+  speed1: 0
+  speed2: 0
+  speed3: 0
 --- !u!114 &22949801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5058,36 +5061,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 339545571}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &342900819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 342900820}
-  m_Layer: 0
-  m_Name: FireCircle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &342900820
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342900819}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2185.3245}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &348543872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6959,6 +6932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5056030930078583506, guid: 88a764b2ef9fd8f42b8549c0b1112642, type: 3}
   delay: 450
+  speed1: 0
+  speed2: 0
+  speed3: 0
 --- !u!114 &455724069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20356,6 +20332,10 @@ MonoBehaviour:
   speed: 0.05
   cooldown: 1
   scythePrefab: {fileID: 2634230951584272010, guid: a873f219514610043843f25149d21347,
+    type: 3}
+  eyePrefab: {fileID: 1389346612366162085, guid: d5561d864ab892c46975b06ade22bba4,
+    type: 3}
+  ankhPrefab: {fileID: 5956025196075688251, guid: 9a3213cb6026f214f85fc5ada4f9cd40,
     type: 3}
   gold: 10
   idles: []
