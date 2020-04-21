@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainScript : MonoBehaviour
 {
     public static MainScript MSCRIPT;
-
+    public float nextPause = 0;
     public enum State
     {
         GAME,
@@ -19,6 +19,7 @@ public class MainScript : MonoBehaviour
     public int heath;
 
     private GameObject buyMenu;
+    private GameObject pauseMenu;
 
     void Awake()
     {
@@ -32,6 +33,7 @@ public class MainScript : MonoBehaviour
     void Start()
     {
         buyMenu = GameObject.Find("UICanvas").transform.Find("Build").gameObject;
+        pauseMenu = GameObject.Find("UICanvas").transform.Find("Pause").gameObject;
         state = State.GAME;
         towerActive = new List<GameObject>();
     }
@@ -47,7 +49,11 @@ public class MainScript : MonoBehaviour
                 buyMenu.SetActive(true);
                 state = State.MENU;
             }
-
+            else if (Input.GetKey(KeyCode.Escape) && Time.time > nextPause)
+            {
+                pauseMenu.GetComponent<PauseScript>().StopTime();
+                pauseMenu.SetActive(true);
+            }
             if (heath <= 0)
             {
                 GameObject.Find("UICanvas").transform.Find("GameOver").gameObject.SetActive(true);

@@ -183,6 +183,6 @@ MonoBehaviour:
   toNext: []
   deathPrefab: {fileID: 5452568145918339602, guid: 7803687ab22079f4c93d7d17af042605,
     type: 3}
-  goldDrop: 30
+  goldDrop: 50
   hp: 50
   speed: 0.002
