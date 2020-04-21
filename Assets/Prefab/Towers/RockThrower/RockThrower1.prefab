@@ -5078,6 +5078,7 @@ MonoBehaviour:
   inCollision: 0
   delay: 0.3
   isUpgrade: 1
+  inRange: []
 --- !u!114 &5721810485109682486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5097,6 +5098,8 @@ MonoBehaviour:
     type: 3}
   coolDown: 0.8
   damage: 2
+  cost: 25
+  upgradeBlurb: Better Diet
   hireName: Rock Thrower
   wage: 7
   tolerance: 3

@@ -12,6 +12,9 @@ public class TowerStats : MonoBehaviour
     public float coolDown;
     public float damage;
 
+    public int cost;
+    public string upgradeBlurb;
+
     public string hireName;
     public int wage;
     public int tolerance;

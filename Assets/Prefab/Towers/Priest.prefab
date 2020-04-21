@@ -9968,10 +9968,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: 0
   dirMatter: 0
-  canUpgrade: 0
-  upgradeTower: {fileID: 0}
+  canUpgrade: 1
+  upgradeTower: {fileID: 1931781417225638771, guid: 8ca220ac05b30d64cb72eddb06936405,
+    type: 3}
   coolDown: 2
   damage: 1
+  cost: 25
+  upgradeBlurb: Anubis?
   hireName: Rock Thrower
   wage: 5
   tolerance: 4

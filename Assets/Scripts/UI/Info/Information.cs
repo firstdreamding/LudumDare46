@@ -45,6 +45,9 @@ public class Information : MonoBehaviour
         transform.Find("Icon").GetComponent<Image>().sprite = ts.icon;
 
         this.ts = ts;
+
+        transform.Find("Upgrade").GetComponent<UpgradeScript>().TsSetup(ts);
+
         currentGameObject = go;
         UpgradeSetup();
     }

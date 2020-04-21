@@ -4916,6 +4916,7 @@ MonoBehaviour:
   inCollision: 0
   delay: 0.3
   isUpgrade: 0
+  inRange: []
 --- !u!114 &1402027617598248541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4935,6 +4936,8 @@ MonoBehaviour:
     type: 3}
   coolDown: 0.8
   damage: 1
+  cost: 15
+  upgradeBlurb: Sharper Rocks
   hireName: Rock Thrower
   wage: 5
   tolerance: 4
