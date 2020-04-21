@@ -20,6 +20,6 @@ public class MainMenuScript : MonoBehaviour
     public void Play()
     {
         Debug.Log("play");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(1);
     }
 }
